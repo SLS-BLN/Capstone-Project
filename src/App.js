@@ -1,10 +1,10 @@
 import styled from 'styled-components/macro';
+import Blog from './blog/Blog';
 
 export default function App() {
   return (
     <Wrapper>
-      <h1>Willkommen bei Marketing mit Video.</h1>
-      <div>Der Blog ist bald verfügbar.</div>
+      <Blog />
     </Wrapper>
   );
 }
@@ -12,6 +12,5 @@ export default function App() {
 const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
-  padding: 3rem;
   background-color: var(--color-tertiary);
 `;
