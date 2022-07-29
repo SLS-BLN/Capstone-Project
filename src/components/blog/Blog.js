@@ -5,9 +5,9 @@ import {nanoid} from 'nanoid';
 
 export default function Blog() {
   return (
-    <Container>
+    <>
       {blogs.map(blog => (
-        <Fragment key={blog.id}>
+        <Container key={blog.id}>
           <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
@@ -27,9 +27,9 @@ export default function Blog() {
               )
             )}
           </div>
-        </Fragment>
+        </Container>
       ))}
-    </Container>
+    </>
   );
 }
 
