@@ -21,18 +21,15 @@ const Wrapper = styled.main`
 
 const Header = styled.header`
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
   background-color: var(--color-primary);
-  height: 7rem;
-  position: relative;
+  position: fixed;
+  width: 100%;
 
   svg {
-    position: absolute;
-    left: 3rem;
-    top: -0.4rem;
+    margin-left: 3rem;
     width: 8em;
-    height: 8rem;
+    height: 7rem;
   }
 `;

@@ -8,7 +8,7 @@ export default function Blog() {
     <Container>
       {blogs.map(blog => (
         <Fragment key={blog.id}>
-          <img src={blog.imgUrl} alt="" width={300} />
+          <img src={blog.imgUrl} alt="blog.imgAlt" width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
           <p className="lead">{blog.lead}</p>
@@ -33,12 +33,13 @@ export default function Blog() {
   );
 }
 
-const Container = styled.main`
+const Container = styled.article`
   padding: 0 3rem;
   background-color: var(--color-grey-dark-2);
 
   img {
     width: 100%;
+    margin-top: 7rem;
     margin-bottom: 3rem;
   }
 

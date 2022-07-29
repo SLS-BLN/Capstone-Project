@@ -7,6 +7,7 @@ export const blogs = [
     titleShort: 'Warum Ton wichtig ist',
     slug: 'warum-ton-wichtig-ist',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659004754/mixer_1000px_eforvy.jpg',
+    imgAlt: 'Audio Mixer',
     tag: 'Audio',
     lead: 'Bei einem Dreh ist es neulich wieder passiert: schöne Bilder aus einem kleinen Modeladen, aber kein Ton.',
     author: 'von Stefan L. Schlicker',
