@@ -25,6 +25,7 @@ const Header = styled.header`
   align-items: center;
   background-color: var(--color-primary);
   position: fixed;
+  max-width: 60rem;
   width: 100%;
 
   svg {

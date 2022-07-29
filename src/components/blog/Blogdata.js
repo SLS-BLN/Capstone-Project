@@ -1,6 +1,6 @@
 import {nanoid} from 'nanoid';
 
-export const blogs = [
+export const blogEntries = [
   {
     id: nanoid(),
     title: 'Warum ein guter Ton bei Videos so wichtig ist',

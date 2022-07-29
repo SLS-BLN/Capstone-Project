@@ -1,22 +1,22 @@
 import styled from 'styled-components/macro';
-import {blogs} from './Blogdata';
-import {Fragment} from 'react';
+import {blogEntries} from './Blogdata';
 import {nanoid} from 'nanoid';
 
 export default function Blog() {
   return (
     <>
-      {blogs.map(blog => (
+      {blogEntries.map(blog => (
         <Container key={blog.id}>
           <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
-   <ul>
-          <li>{blog.author}</li>
-          <li className="date">
-            {blog.date}, {blog.dateUpdated}
-          </li>
-     <ul>
+          <p>{blog.lead}</p>
+          <ul>
+            <li className="author">{blog.author}</li>
+            <li className="date">
+              {blog.date}, {blog.dateUpdated}
+            </li>
+          </ul>
           <div>
             {blog.text.map(paragraph =>
               paragraph.includes('##') ? (
@@ -64,6 +64,13 @@ const Container = styled.article`
     line-height: 1.6;
     font-weight: 500;
     margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+  .author {
+    font-size: 1.2rem;
   }
 
   h2 {
