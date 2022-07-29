@@ -11,11 +11,12 @@ export default function Blog() {
           <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
-          <p className="lead">{blog.lead}</p>
-          <p>{blog.author}</p>
-          <p className="date">
+   <ul>
+          <li>{blog.author}</li>
+          <li className="date">
             {blog.date}, {blog.dateUpdated}
-          </p>
+          </li>
+     <ul>
           <div>
             {blog.text.map(paragraph =>
               paragraph.includes('##') ? (
