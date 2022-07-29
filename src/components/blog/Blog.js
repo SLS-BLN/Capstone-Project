@@ -8,7 +8,7 @@ export default function Blog() {
     <Container>
       {blogs.map(blog => (
         <Fragment key={blog.id}>
-          <img src={blog.imgUrl} alt="blog.imgAlt" width={300} />
+          <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
           <p className="lead">{blog.lead}</p>
