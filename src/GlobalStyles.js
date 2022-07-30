@@ -39,5 +39,6 @@ export default styled.createGlobalStyle`
     --font-color: #f7f7f7;
     --font-color-dark: #333;
     --radius: 0.5rem;
+    --radius-small: 0.25rem;
   }
 `;
