@@ -21,7 +21,7 @@ export default styled.createGlobalStyle`
     font-weight: 400;
     line-height: 1.7;
     color: var(--font-color);
-    background-color: var(--color-grey-dark-1);
+    background-color: var(--color-grey-dark-2);
     font-size: 1.6rem;
   }
 

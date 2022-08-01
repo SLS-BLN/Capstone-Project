@@ -9,8 +9,10 @@ export default function App() {
       <Header>
         <Logo />
       </Header>
-      <BlogBox />
-      <Blog />
+      <div className="container">
+        <BlogBox />
+        <Blog />
+      </div>
     </Wrapper>
   );
 }
@@ -19,6 +21,10 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
+
+  .container {
+    margin-top: 9rem;
+  }
 `;
 
 const Header = styled.header`
@@ -29,6 +35,7 @@ const Header = styled.header`
   position: fixed;
   max-width: 60rem;
   width: 100%;
+  margin-top: -9rem;
 
   svg {
     margin-left: 3rem;

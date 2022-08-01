@@ -24,11 +24,11 @@ export default function BlogBox() {
 
 const Box = styled.article`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: var(--color-grey-dark-1);
   padding: 1rem 0;
-  max-width: 74vw;
-  margin: 0 2rem;
+  max-width: 80%;
+  margin: 0 auto;
   margin-bottom: 2rem;
 
   .box__image {
