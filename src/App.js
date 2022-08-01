@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import Blog from './components/blog/Blog';
+import Blog from '../src/components/blog/Blog';
 import {ReactComponent as Logo} from './logo.svg';
 
 export default function App() {
