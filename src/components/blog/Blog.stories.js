@@ -1,7 +1,7 @@
 import Blog from './Blog';
 
 export default {
-  title: 'Pages/Blog post',
+  title: 'Page/Blog post',
   component: Blog,
   parameters: {
     layout: 'fullscreen',
@@ -12,6 +12,7 @@ const Template = args => <Blog style={{...args}} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  default: true,
   color: 'var(--font-color)',
 };
 

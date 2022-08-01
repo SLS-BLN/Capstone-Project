@@ -45,12 +45,14 @@ const Container = styled.article`
   }
 
   .tag {
+    display: inline-block;
     font-size: 1.2rem;
     margin-bottom: 1.4rem;
     background-color: var(--color-secondary);
     color: var(--font-color-dark);
     padding: 0.1rem 1rem;
-    width: 6rem;
+    min-width: 6rem;
+
     border-radius: var(--radius);
   }
   h1 {

@@ -1,12 +1,22 @@
 import BlogTag from './BlogTag';
 
 export default {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: 'Button/Tag',
   component: BlogTag,
+  parameters: {
+    backgrounds: {
+      values: [
+        {name: 'white', value: 'var(--color-white)'},
+        {name: 'grey-light', value: 'var(--color-grey-dark-1)'},
+        {name: 'gry-dark', value: 'var(--color-grey-dark-2)'},
+      ],
+    },
+    docs: {
+      description: {
+        component: 'Button tag for Search Page',
+      },
+    },
+  },
 };
 
 const Template = args => <BlogTag {...args} />;
