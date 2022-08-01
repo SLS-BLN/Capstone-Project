@@ -59,9 +59,9 @@ const Box = styled.article`
   p {
     font-size: 1.2rem;
     line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: var(--line-clamp, 6);
-    -webkit-box-orient: vertical;
+    display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
+    -webkit-line-clamp: var(--line-clamp, 6); /* stylelint-disable-line property-no-vendor-prefix */
+    -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
     word-break: var(--word-break, 'none');
     overflow: hidden;
     hyphens: auto;
