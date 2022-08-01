@@ -52,7 +52,6 @@ const Container = styled.article`
     color: var(--font-color-dark);
     padding: 0.1rem 1rem;
     min-width: 6rem;
-
     border-radius: var(--radius);
   }
   h1 {

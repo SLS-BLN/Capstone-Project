@@ -7,6 +7,8 @@ export const blogEntries = [
     titleShort: 'Warum Ton wichtig ist',
     slug: 'warum-ton-wichtig-ist',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659271615/mixer_1000px_eforvy.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659271615/mixer_1000px_eforvy.jpg',
     imgAlt: 'Audio Mixer',
     tag: 'Audio',
     lead: 'Bei einem Dreh ist es neulich wieder passiert: schöne Bilder aus einem kleinen Modeladen, aber kein Ton.',
@@ -32,6 +34,8 @@ export const blogEntries = [
     titleShort: 'Nicht unter 2.000 Euro',
     slug: 'nicht-unter-2000-euro',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659271357/concert-phone_3840px_j0o6nm.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659271357/concert-phone_3840px_j0o6nm.jpg',
     imgAlt: 'Kamera',
     tag: 'Kamera',
     lead: 'Reichen 2.000 Euro für eine Kamera-Ausrüstung aus? Das geht nur, wenn das Zubehör billig ist',
@@ -80,6 +84,8 @@ export const blogEntries = [
     slug: 'interview-augenhoehe',
     imgUrl:
       'https://res.cloudinary.com/dq2vrujou/image/upload/v1659272595/jonah-de-oliveira-AbuN0SklCeQ-unsplash_nolrjm.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659272595/jonah-de-oliveira-AbuN0SklCeQ-unsplash_nolrjm.jpg',
     imgAlt: 'Kamera',
     tag: 'Dreh',
     lead: 'Wie muss man filmen, damit eine Person nicht als "niedlich" oder "arrogant" erscheint.',
@@ -108,6 +114,8 @@ export const blogEntries = [
     titleShort: 'Wie Hollywood denken',
     slug: 'wie-hollywood-denken',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659272750/venti-views-6QDvwq2Fjsc-unsplash_yw1akj.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659272750/venti-views-6QDvwq2Fjsc-unsplash_yw1akj.jpg',
     imgAlt: 'Kamera',
     tag: 'Kommentar',
     lead: 'Wer für ein Unternehmen Videos macht, muss wie Hollywood denken - und Misserfolge einkalkulieren.',
@@ -130,6 +138,8 @@ export const blogEntries = [
     titleShort: '5 Schnittprogramme für Profis',
     slug: '5-schnittprogramme-fuer-profis',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659271803/Hero_1000px_HQ_gibdhn.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659271803/Hero_1000px_HQ_gibdhn.jpg',
     imgAlt: 'Kamera',
     tag: 'My Kit',
     lead: 'Für den professionellen Schnitt gibt es im Grunde fünf Programme.',
@@ -160,6 +170,8 @@ export const blogEntries = [
     titleShort: '9 Dinge fürs Smartphone',
     slug: '9-dinge-fürs-smartphone',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659273710/20220731_151651_u5juh7.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659273710/20220731_151651_u5juh7.jpg',
     imgAlt: 'Smartphone Rig mit Licht und Mikrofon',
     tag: 'My Kit',
     lead: 'Ein Geständnis vorneweg: mit dem Smartphone drehe ich wirklich nur ganz, ganz selten.',
@@ -198,6 +210,8 @@ export const blogEntries = [
     titleShort: '16 Dinge, die immer dabei sind',
     slug: '16-dinge-die-immer-dabei-sind',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659273957/Gh5_cage_nl3huu.webp',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659273957/Gh5_cage_nl3huu.webp',
     imgAlt: 'Kamera',
     tag: 'My Kit',
     lead: 'Die Zeiten von Camcordern sind für mich schon seit ein paar Jahren vorbei. Genauer: seit es die GH5 von Panasonic zu kaufen gibt.',
@@ -235,6 +249,8 @@ export const blogEntries = [
     slug: 'make-it-or-buy-it',
     imgUrl:
       'https://res.cloudinary.com/dq2vrujou/image/upload/v1659274198/ibrahim-rifath-OApHds2yEGQ-unsplash_kfakda.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659274198/ibrahim-rifath-OApHds2yEGQ-unsplash_kfakda.jpg',
     imgAlt: 'Kamera',
     tag: 'Produktion',
     lead: 'Schon ab einem Film kann es sich lohnen, Personal selbst einzustellen.',
@@ -273,9 +289,11 @@ export const blogEntries = [
     titleShort: 'Menschen statt Produkte',
     slug: 'menschen-statt-produkte',
     imgUrl: 'https://res.cloudinary.com/dq2vrujou/image/upload/v1659274413/rob-curran-sUXXO3xPBYo-unsplash_grbaoi.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659274413/rob-curran-sUXXO3xPBYo-unsplash_grbaoi.jpg',
     imgAlt: 'Kamera',
     tag: 'Produktion',
-    lead: 'Video-Marketing für kleine Unternehmen: Warum es am Anfang besser ist, Menschen zu filmen - und keine Produkte',
+    lead: 'Video-Marketing für kleine Unternehmen: Warum es am Anfang besser ist, Menschen zu filmen - und keine Produkte.',
     author: 'von Stefan L. Schlicker',
     date: '4. April 2022',
     dateUpdated: '',
@@ -310,6 +328,8 @@ export const blogEntries = [
     slug: 'zeitaufwand-fuer-video',
     imgUrl:
       'https://res.cloudinary.com/dq2vrujou/image/upload/v1659274563/luke-chesser-rCOWMC8qf8A-unsplash_pyl9t1.jpg',
+    imgUrlSquare:
+      'https://res.cloudinary.com/dq2vrujou/image/upload/w_1000,ar_5:3,c_fill,g_auto,e_art:hokusai/v1659274530/luke-chesser-rCOWMC8qf8A-unsplash_pyl9t1.jpg',
     imgAlt: 'Kamera',
     tag: 'Produktion',
     lead: 'Zwei Minuten dreißig. Das ist die typische Länge für einen Fernsehbeitrag in den aktuellen Nachrichtensendungen',

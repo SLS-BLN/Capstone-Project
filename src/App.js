@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import Blog from './components/blog/Blog';
+import BlogBox from './components/blog/BlogBox';
 import {ReactComponent as Logo} from './logo.svg';
 
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
       <Header>
         <Logo />
       </Header>
+      <BlogBox />
       <Blog />
     </Wrapper>
   );
