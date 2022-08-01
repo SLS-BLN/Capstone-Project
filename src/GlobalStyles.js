@@ -40,5 +40,6 @@ export default styled.createGlobalStyle`
     --font-color-dark: #333;
     --radius: 0.5rem;
     --radius-small: 0.25rem;
+    --lh: 1.4rem;
   }
 `;

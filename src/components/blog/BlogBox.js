@@ -33,7 +33,7 @@ const Box = styled.article`
 
   .box__image {
     width: 50%;
-    overflow: hidden;
+    height: 100%;
   }
   .tag {
     font-size: 0.8rem;
