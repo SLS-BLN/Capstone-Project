@@ -1,24 +1,19 @@
 import styled from 'styled-components/macro';
-import {blogEntries} from './Blogdata';
 
-export default function BlogBox() {
+export default function BlogBox({blog}) {
   return (
-    <>
-      {blogEntries.map(blog => (
-        <Box key={blog.id} className="box">
-          <div className="box__image">
-            <p className="tag">{blog.tag} </p>
-            <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
-          </div>
-          <div className="box__text">
-            <h2>{blog.titleShort}</h2>
-            <p>
-              {blog.lead} {blog.text}
-            </p>
-          </div>
-        </Box>
-      ))}
-    </>
+    <Box>
+      <div className="box__image">
+        <p className="tag">{blog.tag} </p>
+        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
+      </div>
+      <div className="box__text">
+        <h2>{blog.titleShort}</h2>
+        <p>
+          {blog.lead} {blog.text}
+        </p>
+      </div>
+    </Box>
   );
 }
 
@@ -27,7 +22,7 @@ const Box = styled.article`
   justify-content: center;
   background-color: var(--color-grey-dark-1);
   padding: 1rem 0;
-  max-width: 80%;
+  max-width: 95%;
   margin: 0 auto;
   margin-bottom: 2rem;
 
@@ -38,7 +33,7 @@ const Box = styled.article`
   .tag {
     font-size: 0.8rem;
     background-color: var(--color-secondary);
-    color: var(--font-color);
+    color: var(--font-color-dark);
     padding: 0.1rem 1rem;
   }
 

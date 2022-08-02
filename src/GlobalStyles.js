@@ -21,7 +21,7 @@ export default styled.createGlobalStyle`
     font-weight: 400;
     line-height: 1.7;
     color: var(--font-color);
-    background-color: var(--color-grey-dark-2);
+    background-color: var(--color-black);
     font-size: 1.6rem;
   }
 
@@ -31,8 +31,8 @@ export default styled.createGlobalStyle`
     --color-primary-dark: #2b373c;
     --color-secondary: #ffb400;
 
-    -color-white: #fff;
-    -color-black: #000;
+    --color-white: #fff;
+    --color-black: #000;
 
     --color-grey-dark-1: #434343;
     --color-grey-dark-2: #333;
