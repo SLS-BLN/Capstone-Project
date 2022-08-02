@@ -2,11 +2,11 @@ import styled from 'styled-components/macro';
 import {blogEntries} from './Blogdata';
 import {nanoid} from 'nanoid';
 
-export default function Blog() {
+export default function Blog({style}) {
   return (
     <>
       {blogEntries.map(blog => (
-        <Container key={blog.id}>
+        <Container key={blog.id} style={style}>
           <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
           <h1>{blog.title}</h1>
@@ -45,12 +45,13 @@ const Container = styled.article`
   }
 
   .tag {
+    display: inline-block;
     font-size: 1.2rem;
     margin-bottom: 1.4rem;
     background-color: var(--color-secondary);
     color: var(--font-color-dark);
     padding: 0.1rem 1rem;
-    width: 6rem;
+    min-width: 6rem;
     border-radius: var(--radius);
   }
   h1 {

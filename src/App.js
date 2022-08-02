@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import Blog from '../src/components/blog/Blog';
+import Blog from './components/blog/Blog';
+import BlogBox from './components/blog/BlogBox';
 import {ReactComponent as Logo} from './logo.svg';
 
 export default function App() {
@@ -8,7 +9,10 @@ export default function App() {
       <Header>
         <Logo />
       </Header>
-      <Blog />
+      <div className="container">
+        <BlogBox />
+        <Blog />
+      </div>
     </Wrapper>
   );
 }
@@ -17,6 +21,10 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
+
+  .container {
+    margin-top: 9rem;
+  }
 `;
 
 const Header = styled.header`
@@ -27,6 +35,7 @@ const Header = styled.header`
   position: fixed;
   max-width: 60rem;
   width: 100%;
+  margin-top: -9rem;
 
   svg {
     margin-left: 3rem;

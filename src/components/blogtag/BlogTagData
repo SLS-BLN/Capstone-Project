@@ -1,0 +1,1 @@
+export const blogTagsEntries = ['Kamera', 'Audio', 'Dreh'];
