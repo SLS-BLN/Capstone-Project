@@ -1,15 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import App from './App';
 import GlobalStyles from './GlobalStyles.js';
 import reportWebVitals from './reportWebVitals';
+import BlogMain from './routes/blog';
+import Video from './routes/video';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <GlobalStyles />
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="blog" element={<BlogMain />} />
+          <Route path="video" element={<Video />} />
+        </Route>
+        <Route
+          path="*"
+          element={
+            <main style={{padding: '1rem'}}>
+              <p>There is nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

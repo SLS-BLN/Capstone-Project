@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 import {FaChevronRight, FaChevronLeft} from 'react-icons/fa';
-import {blogEntries} from '../blog/Blogdata';
-import BlogBox from '../blog/BlogBox';
+import {blogEntries} from '../Blog/Blogdata';
+import BlogBox from '../Blog/BlogBox';
 
 export default function BlogCarousel() {
   const [current, setCurrent] = useState(0);
