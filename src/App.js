@@ -1,7 +1,8 @@
 import styled from 'styled-components/macro';
 import Blog from './components/blog/Blog';
-import BlogBox from './components/blog/BlogBox';
 import {ReactComponent as Logo} from './logo.svg';
+
+import Carousel from './components/carousel/Carousel';
 
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
         <Logo />
       </Header>
       <div className="container">
-        <BlogBox />
+        <Carousel />
         <Blog />
       </div>
     </Wrapper>
@@ -23,7 +24,7 @@ const Wrapper = styled.main`
   background-color: var(--color-grey-dark-2);
 
   .container {
-    margin-top: 9rem;
+    margin-top: 4rem;
   }
 `;
 
@@ -32,10 +33,8 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-primary);
-  position: fixed;
   max-width: 60rem;
   width: 100%;
-  margin-top: -9rem;
 
   svg {
     margin-left: 3rem;
