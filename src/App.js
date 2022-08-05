@@ -16,12 +16,13 @@ export default function App() {
         <Burger open={open} setOpen={setOpen} />
       </Header>
       <nav>
+        <Link to="/"></Link>
         <Link to="/blog"></Link>
         <Link to="/video"></Link>
+        <Link to="/search"></Link>
       </nav>
       <Menu open={open} setOpen={open} />
       <Outlet />
-      <div className="container"></div>
     </Wrapper>
   );
 }
@@ -30,10 +31,6 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
-
-  .container {
-    margin-top: 4rem;
-  }
 `;
 
 const Header = styled.header`

@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import {Link} from 'react-router-dom';
 
 export default function BlogBox({blog}) {
   return (
@@ -12,6 +13,9 @@ export default function BlogBox({blog}) {
         <p>
           {blog.lead} {blog.text}
         </p>
+        <Link className="post-link" to={`/blogs/${blog.slug}`} key={blog.id}>
+          Mehr dazu &#8594;
+        </Link>
       </div>
     </Box>
   );
@@ -66,5 +70,12 @@ const Box = styled.article`
     --delay: calc(-1s * (var(--is-single-line, 1) - 1));
 
     animation: states 1s var(--delay) paused;
+  }
+
+  .post-link {
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
 `;

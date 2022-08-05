@@ -2,13 +2,10 @@ import styled from 'styled-components/macro';
 import {blogEntries} from './Blogdata';
 import {nanoid} from 'nanoid';
 
-export default function Blog({style}) {
-  const slug = 'warum-ton-wichtig-ist';
-  const obj = blogEntries.filter(item => item.slug === slug);
-
+export default function BlogWithMaps({style}) {
   return (
     <>
-      {obj.map(blog => (
+      {blogEntries.map(blog => (
         <Container key={blog.id} style={style}>
           <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
           <p className="tag">{blog.tag} </p>
