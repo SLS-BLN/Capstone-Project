@@ -1,9 +1,10 @@
 import styled from 'styled-components/macro';
 import {blogEntries} from './Blogdata';
 import {nanoid} from 'nanoid';
+import {useParams} from 'react-router-dom';
 
 export default function Blog({style}) {
-  const slug = 'warum-ton-wichtig-ist';
+  let {slug} = useParams();
   const obj = blogEntries.filter(item => item.slug === slug);
 
   return (

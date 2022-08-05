@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import App from './App';
+import Blog from './components/Blog/Blog';
 import GlobalStyles from './GlobalStyles.js';
 import reportWebVitals from './reportWebVitals';
 
@@ -20,6 +21,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="blog" element={<BlogMain />} />
+        <Route path="blog/:slug" element={<Blog slug={'slug'} />} />
         <Route path="video" element={<Video />} />
         <Route path="search" element={<Search />} />
         <Route path="*" element={<Error />} />

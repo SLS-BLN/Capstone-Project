@@ -1,7 +1,9 @@
 import styled from 'styled-components/macro';
-import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 export default function BlogBox({blog}) {
+  let navigate = useNavigate();
+
   return (
     <Box>
       <div className="box__image">
@@ -13,9 +15,13 @@ export default function BlogBox({blog}) {
         <p>
           {blog.lead} {blog.text}
         </p>
-        <Link className="post-link" to={`/blogs/${blog.slug}`} key={blog.id}>
+        <button
+          onClick={() => {
+            navigate(`/blog/${blog.slug}`);
+          }}
+        >
           Mehr dazu &#8594;
-        </Link>
+        </button>
       </div>
     </Box>
   );
@@ -72,10 +78,11 @@ const Box = styled.article`
     animation: states 1s var(--delay) paused;
   }
 
-  .post-link {
+  button {
     color: var(--font-color);
-    text-decoration: none;
+    background-color: var(--color-grey-dark-1);
     font-size: 1.2rem;
     font-weight: 500;
+    border: none;
   }
 `;
