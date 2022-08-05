@@ -2,12 +2,21 @@ import styled from 'styled-components/macro';
 import {NavLink} from 'react-router-dom';
 import {bool} from 'prop-types';
 
-export default function Menu(open, setOpen) {
+export default function Menu({open, setOpen}) {
   return (
-    <StyledMenu>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/blog">Blog</NavLink>
-      <NavLink to="/video">Video</NavLink>
+    <StyledMenu open={open}>
+      <NavLink to="/" onClick={open}>
+        Home
+      </NavLink>
+      <NavLink to="blog" onClick={open}>
+        Blog
+      </NavLink>
+      <NavLink to="video" onClick={open}>
+        Video
+      </NavLink>
+      <NavLink to="search" onClick={open}>
+        Suche
+      </NavLink>
     </StyledMenu>
   );
 }
@@ -17,16 +26,23 @@ Menu.propTypes = {
 };
 
 const StyledMenu = styled.nav`
-  display: flex;
+  /* visibility: ${({open}) => (open ? 'visible' : 'hidden')}; */
+  /* transition: visibility 3s, opacity 1.5s linear; */
+  /* opacity: ${({open}) => (open ? '1' : '0')};
+  transition: opacity 2s ease;
+  display: block; */
+  /* display: flex; */
+  display: ${({open}) => (open ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin: 8rem 0;
   background: var(--color-grey-dark-2);
   height: 100vh;
-
-  transition: transform 0.3s ease-in-out;
-  /* transform: ${({open}) => (open ? 'translateX(0)' : 'translateX(-100%)')}; */
+  /* transform: ${({open}) => (open ? 'translateY(0)' : 'translateY(100%)')}; */
+  /* transition: transform 1.5s ease-in-out;
+  transition-delay: 2750ms;
+  z-index: 1; */
 
   a {
     font-size: 2.2rem;
@@ -36,9 +52,9 @@ const StyledMenu = styled.nav`
     letter-spacing: 0.5rem;
     color: var(--color-white);
     text-decoration: none;
-    transition: color 0.3s linear;
 
-    &:hover  {
+    &:hover {
       color: var(--color-secondary);
+    }
   }
 `;

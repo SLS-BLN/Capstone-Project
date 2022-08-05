@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom';
 import App from './App';
 import GlobalStyles from './GlobalStyles.js';
 import reportWebVitals from './reportWebVitals';
 import BlogMain from './routes/blog';
+import Search from './routes/search';
 import Video from './routes/video';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<App />}>
           <Route path="blog" element={<BlogMain />} />
           <Route path="video" element={<Video />} />
+          <Route path="search" element={<Search />} />
         </Route>
         <Route
           path="*"

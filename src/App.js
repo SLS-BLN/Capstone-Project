@@ -1,18 +1,13 @@
-import {useState, useRef} from 'react';
-import {useOnClickOutside} from './hooks';
+import {useState} from 'react';
 import styled from 'styled-components/macro';
-import {Link} from 'react-router-dom';
 import {ReactComponent as Logo} from './logo.svg';
+import {Link, Outlet} from 'react-router-dom';
 
 import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
-import Carousel from './components/Carousel/Carousel';
-import Blog from './components/Blog/Blog';
 
 export default function App() {
   const [open, setOpen] = useState(false);
-  const node = useRef();
-  useOnClickOutside(node, () => setOpen(false));
 
   return (
     <Wrapper>
@@ -20,12 +15,13 @@ export default function App() {
         <Logo />
         <Burger open={open} setOpen={setOpen} />
       </Header>
-      <Menu open={open} setOpen={setOpen} />
-
-      <div className="container">
-        <Carousel />
-        <Blog />
-      </div>
+      <nav>
+        <Link to="/blog"></Link>
+        <Link to="/video"></Link>
+      </nav>
+      <Menu open={open} setOpen={open} />
+      <Outlet />
+      <div className="container"></div>
     </Wrapper>
   );
 }

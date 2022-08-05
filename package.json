@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cloudinary-react": "^1.8.1",
+    "framer-motion": "^7.0.0",
     "mongoose": "^6.4.0",
     "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",
