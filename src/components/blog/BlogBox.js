@@ -20,7 +20,7 @@ export default function BlogBox({blog}) {
             navigate(`/blog/${blog.slug}`);
           }}
         >
-          Mehr dazu &#8594;
+          Mehr dazu ...
         </button>
       </div>
     </Box>
@@ -32,7 +32,7 @@ const Box = styled.article`
   justify-content: center;
   background-color: var(--color-grey-dark-1);
   padding: 1rem 0;
-  max-width: 95%;
+  max-width: 100%;
   margin: 0 auto;
   margin-bottom: 2rem;
 
@@ -41,10 +41,11 @@ const Box = styled.article`
     height: 100%;
   }
   .tag {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     background-color: var(--color-secondary);
     color: var(--font-color-dark);
-    padding: 0.1rem 1rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.01rem;
   }
 
   .box__text {
@@ -59,13 +60,14 @@ const Box = styled.article`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 0.5rem 0;
   }
 
   p {
     font-size: 1.2rem;
     line-height: 1.2;
     display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
-    -webkit-line-clamp: var(--line-clamp, 6); /* stylelint-disable-line property-no-vendor-prefix */
+    -webkit-line-clamp: var(--line-clamp, 5); /* stylelint-disable-line property-no-vendor-prefix */
     -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
     word-break: var(--word-break, 'none');
     overflow: hidden;
@@ -76,13 +78,16 @@ const Box = styled.article`
     --delay: calc(-1s * (var(--is-single-line, 1) - 1));
 
     animation: states 1s var(--delay) paused;
+    margin-bottom: 1rem;
   }
 
   button {
     color: var(--font-color);
-    background-color: var(--color-grey-dark-1);
+    background-color: var(--color-primary-light);
     font-size: 1.2rem;
     font-weight: 500;
     border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
   }
 `;

@@ -1,9 +1,10 @@
 import BlogBox from '../components/Blog/BlogBox';
-import {blogEntries} from '../components/Blog/Blogdata';
+import {blogEntries} from '../components/Blog/BlogData';
+import styled from 'styled-components/macro';
 
 export default function BlogMain() {
   return (
-    <main style={{padding: '1rem'}}>
+    <Section>
       {blogEntries.map((blog, index) => {
         return (
           <div key={index}>
@@ -11,6 +12,10 @@ export default function BlogMain() {
           </div>
         );
       })}
-    </main>
+    </Section>
   );
 }
+
+const Section = styled.section`
+  margin: 2rem 3rem 0;
+`;

@@ -5,6 +5,14 @@ import {Link, Outlet} from 'react-router-dom';
 
 import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
+import {Routes, Route} from 'react-router-dom';
+
+import Blog from './components/Blog/Blog';
+import Home from './routes/home';
+import BlogMain from './routes/blog';
+import Video from './routes/video';
+import Search from './routes/search';
+import Error from './routes/error';
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -15,13 +23,21 @@ export default function App() {
         <Logo />
         <Burger open={open} setOpen={setOpen} />
       </Header>
+      <Menu open={open} setOpen={open} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="blog" element={<BlogMain />} />
+        <Route path="blog/:slug" element={<Blog slug={'slug'} />} />
+        <Route path="video" element={<Video />} />
+        <Route path="search" element={<Search />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
       <nav>
         <Link to="/"></Link>
         <Link to="/blog"></Link>
         <Link to="/video"></Link>
         <Link to="/search"></Link>
       </nav>
-      <Menu open={open} setOpen={open} />
       <Outlet />
     </Wrapper>
   );

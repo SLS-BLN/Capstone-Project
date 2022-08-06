@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 import {FaChevronRight, FaChevronLeft} from 'react-icons/fa';
-import {blogEntries} from '../Blog/Blogdata';
+import {blogEntries} from '../Blog/BlogData';
 import BlogBox from '../Blog/BlogBox';
 
 export default function BlogCarousel() {
@@ -59,7 +59,7 @@ const Carousel = styled.section`
 
 const Button = styled.button`
   font-size: 2.4rem;
-  color: var(--font-color);
+  color: var(--color-primary-light);
   border: none;
   background-color: transparent;
 `;
