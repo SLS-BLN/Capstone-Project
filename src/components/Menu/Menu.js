@@ -26,7 +26,7 @@ Menu.propTypes = {
 };
 
 const StyledMenu = styled.nav`
-  /* FIXME: add CSS page animation - transformX - "display: none" doesn't work */
+  /* add CSS page animation - transformX - "display: none" doesn't work */
   display: ${({open}) => (open ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: flex-start;

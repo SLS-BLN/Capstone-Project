@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
 
 export default function Home(style) {
-  // TODO: hard coded at the moment - should be dynamic (newest date)
+  // hard coded at the moment - should be dynamic (newest date)
   const blog = blogEntries.at(-1);
   let navigate = useNavigate();
 

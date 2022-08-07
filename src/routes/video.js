@@ -4,7 +4,7 @@ import {videoEntries} from '../components/Video/VideoData';
 import {useNavigate} from 'react-router-dom';
 
 export default function VideoMain() {
-  // TODO: // hard coded at the moment - should be dynamic (newest date)
+  // hard coded at the moment - should be dynamic (newest date)
   const video = videoEntries.at(-1);
   let navigate = useNavigate();
 
@@ -25,7 +25,7 @@ export default function VideoMain() {
       <h2>Beliebt</h2>
       <VideoContainer>
         <ul>
-          {/* FIXME: sort by likes later on */}
+          {/* sort by likes later on */}
           {videoEntries.map((video, index) => (
             <li key={index}>
               <h3>{video.titleShort}</h3>
@@ -48,7 +48,7 @@ export default function VideoMain() {
       <h2>Neu</h2>
       <VideoContainer>
         <ul>
-          {/*  FIXME: sort by date later on */}
+          {/* sort by date later on */}
           {videoEntries.map((video, index) => (
             <li key={index}>
               <h3>{video.titleShort}</h3>
