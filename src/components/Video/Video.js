@@ -1,54 +1,55 @@
-import Carousel from '../components/Carousel/Carousel';
-import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
+import {videoEntries} from './VideoData';
+import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
 
-export default function Home(style) {
-  // TODO: hard coded at the moment - should be dynamic (newest date)
-  const blog = blogEntries.at(-1);
-  let navigate = useNavigate();
+export default function Video({style}) {
+  const navigate = useNavigate();
+  let {slug} = useParams();
+  const obj = videoEntries.filter(item => item.slug === slug);
 
   return (
     <>
-      <Container key={blog.id} style={style}>
-        <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
-        <p className="tag">{blog.tag} </p>
-        <h1>{blog.title}</h1>
-        <p>
-          {blog.lead} {blog.text.at(0)}
-        </p>
-        <MoreButton
-          onClick={() => {
-            navigate(`/blog/${blog.slug}`);
-          }}
-        >
-          Mehr dazu ...
-        </MoreButton>
-      </Container>
-      <Carousel />
-      <Video className="grid">
-        <div style={{'--aspect-ratio': '16 / 9'}}>
-          <ReactPlayer url="https://vimeo.com/737176389" width="640" height="480" controls="true" playsinline />
-        </div>
-      </Video>
+      {obj.map(video => (
+        <Container key={video.id} style={style}>
+          <Hero>
+            <VideoClip className="grid">
+              <div style={{'--aspect-ratio': '16 / 9'}}>
+                <ReactPlayer url={video.videoUrl} width="640" height="480" controls="true" playsinline />
+              </div>
+            </VideoClip>
+            <div className="description">
+              <p className="tag">{video.tag} </p>
+              <h1>{video.titleShort}</h1>
+              <p>{video.description}</p>
+            </div>
+          </Hero>
+          <BackButton className="tag-and-back" onClick={() => navigate(-1)}>
+            Zurück
+          </BackButton>
+        </Container>
+      ))}
     </>
   );
 }
 
-const Container = styled.article`
-  padding: 0 3rem;
-  background-color: var(--color-grey-dark-2);
-  margin-bottom: 4rem;
+const Container = styled.div`
+  margin-bottom: 10rem;
+`;
 
-  img {
-    width: 100%;
-    margin: 2rem 0;
+const Hero = styled.div`
+  background-color: var(--color-grey-dark-2);
+
+  .description {
+    padding: 1rem 0;
+    margin: 0 3rem 6rem;
   }
 
   .tag {
     display: inline-block;
     font-size: 1.2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
     background-color: var(--color-secondary);
     color: var(--font-color-dark);
@@ -60,16 +61,17 @@ const Container = styled.article`
     font-size: 2.4rem;
     font-weight: 500;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
   p {
-    font-weight: 400;
+    font-weight: 300;
     margin-bottom: 1rem;
+    line-height: 1.2;
   }
 `;
 
-const MoreButton = styled.button`
+const BackButton = styled.button`
   color: var(--font-color);
   background-color: var(--color-primary-light);
   font-size: 1.2rem;
@@ -77,10 +79,11 @@ const MoreButton = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+  margin: 0 3rem 5rem;
 `;
 
-const Video = styled.section`
-  margin: 3rem 0;
+const VideoClip = styled.section`
+  margin-bottom: 2rem;
 
   .grid {
     display: grid;

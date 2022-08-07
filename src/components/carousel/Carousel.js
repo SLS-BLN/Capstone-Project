@@ -21,6 +21,7 @@ export default function BlogCarousel() {
       <Button className="btn btn--left" onClick={prevSlide}>
         <FaChevronLeft />
       </Button>
+      {/* TODO: use date(newest to oldest) instead of index */}
       {blogEntries.map((slide, index) => {
         if (index === current) {
           return (

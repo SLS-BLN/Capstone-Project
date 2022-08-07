@@ -40,6 +40,7 @@ export default function Blog({style}) {
           <BackButton className="tag-and-back" onClick={() => navigate(-1)}>
             Zurück
           </BackButton>
+          <div className="space"></div>
         </Container>
       ))}
     </>
@@ -49,6 +50,7 @@ export default function Blog({style}) {
 const Container = styled.article`
   padding: 0 3rem;
   background-color: var(--color-grey-dark-2);
+  margin-bottom: 6rem;
 
   img {
     width: 100%;
@@ -104,6 +106,9 @@ const Container = styled.article`
     font-size: 1rem;
     font-weight: 100;
     margin-bottom: 2rem;
+  }
+  .space {
+    height: 5rem;
   }
 `;
 

@@ -15,13 +15,13 @@ export default function BlogBox({blog}) {
         <p>
           {blog.lead} {blog.text}
         </p>
-        <button
+        <MoreButton
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
           }}
         >
           Mehr dazu ...
-        </button>
+        </MoreButton>
       </div>
     </Box>
   );
@@ -67,6 +67,7 @@ const Box = styled.article`
     font-size: 1.2rem;
     line-height: 1.2;
     display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
+    /* FIXME: line-clamp is hard coded (5) - bad idea! */
     -webkit-line-clamp: var(--line-clamp, 5); /* stylelint-disable-line property-no-vendor-prefix */
     -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
     word-break: var(--word-break, 'none');
@@ -80,14 +81,14 @@ const Box = styled.article`
     animation: states 1s var(--delay) paused;
     margin-bottom: 1rem;
   }
+`;
 
-  button {
-    color: var(--font-color);
-    background-color: var(--color-primary-light);
-    font-size: 1.2rem;
-    font-weight: 500;
-    border: none;
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--radius);
-  }
+const MoreButton = styled.button`
+  color: var(--font-color);
+  background-color: var(--color-primary-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
 `;

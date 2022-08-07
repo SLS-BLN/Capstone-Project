@@ -26,12 +26,7 @@ Menu.propTypes = {
 };
 
 const StyledMenu = styled.nav`
-  /* visibility: ${({open}) => (open ? 'visible' : 'hidden')}; */
-  /* transition: visibility 3s, opacity 1.5s linear; */
-  /* opacity: ${({open}) => (open ? '1' : '0')};
-  transition: opacity 2s ease;
-  display: block; */
-  /* display: flex; */
+  /* FIXME: add CSS page animation - transformX - "display: none" doesn't work */
   display: ${({open}) => (open ? 'flex' : 'none')};
   flex-direction: column;
   justify-content: flex-start;
@@ -39,10 +34,6 @@ const StyledMenu = styled.nav`
   margin: 8rem 0;
   background: var(--color-grey-dark-2);
   height: 100vh;
-  /* transform: ${({open}) => (open ? 'translateY(0)' : 'translateY(100%)')}; */
-  /* transition: transform 1.5s ease-in-out;
-  transition-delay: 2750ms;
-  z-index: 1; */
 
   a {
     font-size: 2.2rem;

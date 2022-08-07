@@ -8,9 +8,10 @@ import Menu from './components/Menu/Menu';
 import {Routes, Route} from 'react-router-dom';
 
 import Blog from './components/Blog/Blog';
+import Video from './components/Video/Video';
 import Home from './routes/home';
 import BlogMain from './routes/blog';
-import Video from './routes/video';
+import VideoMain from './routes/video';
 import Search from './routes/search';
 import Error from './routes/error';
 
@@ -28,7 +29,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="blog" element={<BlogMain />} />
         <Route path="blog/:slug" element={<Blog slug={'slug'} />} />
-        <Route path="video" element={<Video />} />
+        <Route path="video" element={<VideoMain />} />
+        <Route path="video/:slug" element={<Video slug={'slug'} />} />
         <Route path="search" element={<Search />} />
         <Route path="*" element={<Error />} />
       </Routes>
