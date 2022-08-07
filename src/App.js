@@ -37,6 +37,7 @@ export default function App() {
       <nav>
         <Link to="/"></Link>
         <Link to="/blog"></Link>
+        <Link to="/error"></Link>
         <Link to="/video"></Link>
         <Link to="/search"></Link>
       </nav>
