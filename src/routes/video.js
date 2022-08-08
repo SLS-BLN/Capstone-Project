@@ -34,6 +34,8 @@ export default function VideoMain() {
                   <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
+                  role="navigation"
+                  aria-label="Video Clip"
                   onClick={() => {
                     navigate(`/video/${video.slug}`);
                   }}
@@ -57,6 +59,8 @@ export default function VideoMain() {
                   <ReactPlayer url={video.videoUrl} width="640" height="480" controls="true" playsinline />
                 </div>
                 <MoreButtonPlain
+                  role="navigation"
+                  aria-label="Video Clip"
                   onClick={() => {
                     navigate(`/video/${video.slug}`);
                   }}

@@ -19,6 +19,8 @@ export default function Home(style) {
           {blog.lead} {blog.text.at(0)}
         </p>
         <MoreButton
+          role="navigation"
+          aria-label="Blog Post"
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
           }}

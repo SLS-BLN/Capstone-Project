@@ -7,11 +7,11 @@ import ReactPlayer from 'react-player/vimeo';
 export default function Video({style}) {
   const navigate = useNavigate();
   let {slug} = useParams();
-  const obj = videoEntries.filter(item => item.slug === slug);
+  const videoPost = videoEntries.filter(item => item.slug === slug);
 
   return (
     <>
-      {obj.map(video => (
+      {videoPost.map(video => (
         <Container key={video.id} style={style}>
           <Hero>
             <VideoClip className="grid">
@@ -25,9 +25,7 @@ export default function Video({style}) {
               <p>{video.description}</p>
             </div>
           </Hero>
-          <BackButton className="tag-and-back" onClick={() => navigate(-1)}>
-            Zurück
-          </BackButton>
+          <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
         </Container>
       ))}
     </>

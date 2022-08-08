@@ -6,11 +6,7 @@ export default function BlogMain() {
   return (
     <Section>
       {blogEntries.map((blog, index) => {
-        return (
-          <div key={index}>
-            <BlogBox blog={blog} />
-          </div>
-        );
+        return <BlogBox key={index} blog={blog} />;
       })}
     </Section>
   );

@@ -110,7 +110,7 @@ export const videoEntries = [
     posterFrameUrl: '',
     tag: 'Dreh',
     description:
-      'Eigentlich ist nichts ist so einfach, wie in einer Industrieprodutkion zu drehen - wenn man die Abläufe kennt. Vieles wiederholt sich. Und dass sogar alle paar Sekunden. Aber das war es auch schon in Sachen "alles einfach". Die Realität sieht anders aus.',
+      'Eigentlich ist nichts ist so einfach, wie in einer Industrieprodutkion zu drehen - wenn man die Abläufe kennt. Vieles wiederholt sich. Und das sogar alle paar Sekunden. Aber das war es auch schon in Sachen "alles einfach". Die Realität sieht anders aus.',
     lowerThirds: [],
     location: 'Berlin',
     author: 'Ben Muster',

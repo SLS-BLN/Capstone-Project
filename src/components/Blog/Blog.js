@@ -13,7 +13,7 @@ export default function Blog() {
     <>
       {obj.map(blog => (
         <Container key={blog.id}>
-          <div className="tag-and-back">
+          <div>
             <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
             <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
             <p className="tag">{blog.tag} </p>
@@ -37,10 +37,7 @@ export default function Blog() {
               )
             )}
           </div>
-          <BackButton className="tag-and-back" onClick={() => navigate(-1)}>
-            Zurück
-          </BackButton>
-          <div className="space"></div>
+          <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
         </Container>
       ))}
     </>
@@ -48,9 +45,8 @@ export default function Blog() {
 }
 
 const Container = styled.article`
-  padding: 0 3rem;
+  padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
-  margin-bottom: 6rem;
 
   img {
     width: 100%;
@@ -106,9 +102,6 @@ const Container = styled.article`
     font-size: 1rem;
     font-weight: 100;
     margin-bottom: 2rem;
-  }
-  .space {
-    height: 5rem;
   }
 `;
 
