@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 
 export default function Blog() {
   const navigate = useNavigate();
-  let {slug} = useParams();
+  const {slug} = useParams();
   const blogPost = blogEntries.filter(item => item.slug === slug);
 
   return (
