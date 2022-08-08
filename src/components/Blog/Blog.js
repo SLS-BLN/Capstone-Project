@@ -7,11 +7,11 @@ import {useNavigate} from 'react-router-dom';
 export default function Blog() {
   const navigate = useNavigate();
   let {slug} = useParams();
-  const obj = blogEntries.filter(item => item.slug === slug);
+  const blogPost = blogEntries.filter(item => item.slug === slug);
 
   return (
     <>
-      {obj.map(blog => (
+      {blogPost.map(blog => (
         <Container key={blog.id}>
           <div>
             <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
