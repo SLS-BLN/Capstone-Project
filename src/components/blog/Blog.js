@@ -4,7 +4,7 @@ import {nanoid} from 'nanoid';
 import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 
-export default function Blog({style}) {
+export default function Blog() {
   const navigate = useNavigate();
   let {slug} = useParams();
   const obj = blogEntries.filter(item => item.slug === slug);
@@ -12,7 +12,7 @@ export default function Blog({style}) {
   return (
     <>
       {obj.map(blog => (
-        <Container key={blog.id} style={style}>
+        <Container key={blog.id}>
           <div className="tag-and-back">
             <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
             <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
