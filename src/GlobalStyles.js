@@ -19,7 +19,7 @@ export default styled.createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    line-height: 1.7;
+    line-height: 1.4;
     color: var(--font-color);
     background-color: var(--color-black);
     font-size: 1.6rem;

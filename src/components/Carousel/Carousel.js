@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import styled from 'styled-components';
 import {FaChevronRight, FaChevronLeft} from 'react-icons/fa';
-import {blogEntries} from '../blog/Blogdata';
-import BlogBox from '../blog/BlogBox';
+import {blogEntries} from '../Blog/BlogData';
+import BlogBox from '../Blog/BlogBox';
 
 export default function BlogCarousel() {
   const [current, setCurrent] = useState(0);
@@ -21,6 +21,7 @@ export default function BlogCarousel() {
       <Button className="btn btn--left" onClick={prevSlide}>
         <FaChevronLeft />
       </Button>
+      {/* use date(newest to oldest) instead of index */}
       {blogEntries.map((slide, index) => {
         if (index === current) {
           return (
@@ -59,7 +60,7 @@ const Carousel = styled.section`
 
 const Button = styled.button`
   font-size: 2.4rem;
-  color: var(--font-color);
+  color: var(--color-primary-light);
   border: none;
   background-color: transparent;
 `;

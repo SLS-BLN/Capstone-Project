@@ -1,14 +1,23 @@
 import styled from 'styled-components/macro';
-import {blogEntries} from './Blogdata';
+import {blogEntries} from './BlogData';
 import {nanoid} from 'nanoid';
+import {useParams} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
-export default function Blog({style}) {
+export default function Blog() {
+  const navigate = useNavigate();
+  const {slug} = useParams();
+  const blogPost = blogEntries.filter(item => item.slug === slug);
+
   return (
     <>
-      {blogEntries.map(blog => (
-        <Container key={blog.id} style={style}>
-          <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
-          <p className="tag">{blog.tag} </p>
+      {blogPost.map(blog => (
+        <Container key={blog.id}>
+          <div>
+            <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
+            <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
+            <p className="tag">{blog.tag} </p>
+          </div>
           <h1>{blog.title}</h1>
           <p>{blog.lead}</p>
           <ul>
@@ -28,6 +37,7 @@ export default function Blog({style}) {
               )
             )}
           </div>
+          <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
         </Container>
       ))}
     </>
@@ -35,19 +45,19 @@ export default function Blog({style}) {
 }
 
 const Container = styled.article`
-  padding: 0 3rem;
+  padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
 
   img {
     width: 100%;
-    margin-top: 7rem;
-    margin-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .tag {
     display: inline-block;
     font-size: 1.2rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1rem;
     background-color: var(--color-secondary);
     color: var(--font-color-dark);
     padding: 0.1rem 1rem;
@@ -57,13 +67,13 @@ const Container = styled.article`
   h1 {
     font-size: 2.4rem;
     font-weight: 500;
-    line-height: 1.4;
-    margin-bottom: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
   }
 
   .lead {
     line-height: 1.6;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 2rem;
   }
 
@@ -71,6 +81,7 @@ const Container = styled.article`
     list-style: none;
   }
   .author {
+    margin-top: 1.5rem;
     font-size: 1.2rem;
   }
 
@@ -82,7 +93,7 @@ const Container = styled.article`
   }
 
   .textbody {
-    line-height: 1.6;
+    line-height: 1.4;
     font-weight: 300;
     margin-bottom: 1.6rem;
   }
@@ -92,4 +103,16 @@ const Container = styled.article`
     font-weight: 100;
     margin-bottom: 2rem;
   }
+`;
+
+const BackButton = styled.button`
+  display: block;
+  color: var(--font-color);
+  background-color: var(--color-primary-light);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
 `;
