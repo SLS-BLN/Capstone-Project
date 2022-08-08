@@ -1,5 +1,5 @@
 import Carousel from '../components/Carousel/Carousel';
-import {blogEntries} from '../components/BlogTemp/BlogData';
+import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';

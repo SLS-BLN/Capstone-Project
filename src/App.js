@@ -7,7 +7,7 @@ import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
 import {Routes, Route} from 'react-router-dom';
 
-import Blog from './components/BlogTemp/Blog';
+import Blog from './components/Blog/Blog';
 import Video from './components/Video/Video';
 import Home from './routes/home';
 import BlogMain from './routes/blogpage';
