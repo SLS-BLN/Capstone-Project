@@ -16,7 +16,7 @@ export default function Video({style}) {
           <Hero>
             <VideoClip className="grid">
               <div style={{'--aspect-ratio': '16 / 9'}}>
-                <ReactPlayer url={video.videoUrl} width="640" height="480" controls="true" playsinline />
+                <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
               </div>
             </VideoClip>
             <div className="description">

@@ -10,7 +10,7 @@ import {Routes, Route} from 'react-router-dom';
 import Blog from './components/Blog/Blog';
 import Video from './components/Video/Video';
 import Home from './routes/home';
-import BlogMain from './routes/blog';
+import BlogMain from './routes/blogpage';
 import VideoMain from './routes/video';
 import Search from './routes/search';
 import Error from './routes/error';

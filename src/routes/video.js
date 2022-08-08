@@ -13,7 +13,7 @@ export default function VideoMain() {
       <Hero key={video.id}>
         <VideoClip className="grid">
           <div style={{'--aspect-ratio': '16 / 9'}}>
-            <ReactPlayer url={video.videoUrl} width="640" height="480" controls="true" playsinline />
+            <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
           </div>
         </VideoClip>
         <div className="description">
@@ -31,7 +31,7 @@ export default function VideoMain() {
               <h3>{video.titleShort}</h3>
               <VideoClip className="grid">
                 <div style={{'--aspect-ratio': '16 / 9'}}>
-                  <ReactPlayer url={video.videoUrl} width="640" height="480" controls="true" playsinline />
+                  <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
                   onClick={() => {

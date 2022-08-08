@@ -29,7 +29,7 @@ export default function Home(style) {
       <Carousel />
       <Video className="grid">
         <div style={{'--aspect-ratio': '16 / 9'}}>
-          <ReactPlayer url="https://vimeo.com/737176389" width="640" height="480" controls="true" playsinline />
+          <ReactPlayer url="https://vimeo.com/737176389" width="640" height="480" controls={true} playsinline />
         </div>
       </Video>
     </>
