@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
+import {BlogTagLine} from '../Blogtag/BlogTag';
 
 export default function BlogBox({blog}) {
   let navigate = useNavigate();
@@ -7,7 +8,7 @@ export default function BlogBox({blog}) {
   return (
     <Box>
       <div className="box__image">
-        <p className="tag">{blog.tag} </p>
+        <BlogTagLine tagName={blog.tag} />
         <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
       </div>
       <div className="box__text">

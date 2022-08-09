@@ -17,10 +17,15 @@ export const tagColors = [
   {tag: 'Resolve', color: '#14087e'},
   {tag: 'Schnitt', color: '#14087e'},
 
+  // Sonstiges
+  {tag: 'Kommentar', color: '#111111'},
+
   // Technik
   {tag: 'Drohnen', color: '#8f1683'},
   {tag: 'Foto', color: '#8f1683'},
   {tag: 'Kamera', color: '#8f1683'},
+  {tag: 'Licht', color: '#8f1683'},
+  {tag: 'My Kit', color: '#8f1683'},
   {tag: 'Objektive', color: '#8f1683'},
   {tag: 'Video', color: '#8f1683'},
 ];

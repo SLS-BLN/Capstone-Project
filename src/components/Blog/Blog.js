@@ -3,6 +3,7 @@ import {blogEntries} from './BlogData';
 import {nanoid} from 'nanoid';
 import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
+import BlogTag from '../Blogtag/BlogTag';
 
 export default function Blog() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function Blog() {
           <div>
             <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
             <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
-            <p className="tag">{blog.tag} </p>
+            <BlogTag tagName={blog.tag} />
           </div>
           <h1>{blog.title}</h1>
           <p>{blog.lead}</p>
@@ -54,16 +55,6 @@ const Container = styled.article`
     margin-bottom: 2rem;
   }
 
-  .tag {
-    display: inline-block;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.1rem 1rem;
-    min-width: 6rem;
-    border-radius: var(--radius);
-  }
   h1 {
     font-size: 2.4rem;
     font-weight: 500;

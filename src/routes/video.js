@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import ReactPlayer from 'react-player/vimeo';
 import {videoEntries} from '../components/Video/VideoData';
 import {useNavigate} from 'react-router-dom';
+import BlogTag from '../components/Blogtag/BlogTag';
 
 export default function VideoMain() {
   // hard coded at the moment - should be dynamic (newest date)
@@ -17,7 +18,7 @@ export default function VideoMain() {
           </div>
         </VideoClip>
         <div className="description">
-          <p className="tag">{video.tag} </p>
+          <BlogTag tagName={video.tag} />
           <h1>{video.titleShort}</h1>
           <p>{video.description}</p>
         </div>
@@ -85,17 +86,6 @@ const Hero = styled.div`
     margin-bottom: 6rem;
   }
 
-  .tag {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.1rem 1rem;
-    min-width: 6rem;
-    border-radius: var(--radius);
-  }
   h1 {
     font-size: 2.4rem;
     font-weight: 500;
