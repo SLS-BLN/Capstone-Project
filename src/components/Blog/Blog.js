@@ -73,7 +73,7 @@ const Container = styled.article`
   }
   .author {
     margin-top: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   h2 {
@@ -90,7 +90,7 @@ const Container = styled.article`
   }
 
   .date {
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 100;
     margin-bottom: 2rem;
   }
