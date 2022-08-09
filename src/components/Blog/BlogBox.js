@@ -41,13 +41,6 @@ const Box = styled.article`
     width: 50%;
     height: 100%;
   }
-  .tag {
-    font-size: 1.2rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.01rem;
-  }
 
   .box__text {
     width: 50%;
@@ -90,5 +83,6 @@ const MoreButton = styled.button`
   font-weight: 500;
   border: none;
   padding: 0.25rem 0.5rem;
+  margin-bottom: 0.01rem;
   border-radius: var(--radius);
 `;
