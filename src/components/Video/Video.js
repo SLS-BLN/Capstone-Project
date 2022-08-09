@@ -3,6 +3,7 @@ import {videoEntries} from './VideoData';
 import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
+import BlogTag from '../Blogtag/BlogTag';
 
 export default function Video({style}) {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function Video({style}) {
               </div>
             </VideoClip>
             <div className="description">
-              <p className="tag">{video.tag} </p>
+              <BlogTag tagName={video.tag} />
               <h1>{video.titleShort}</h1>
               <p>{video.description}</p>
             </div>
@@ -78,6 +79,9 @@ const BackButton = styled.button`
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   margin: 0 3rem 5rem;
+  &:hover {
+    background-color: var(--color-primary);
+  }
 `;
 
 const VideoClip = styled.section`

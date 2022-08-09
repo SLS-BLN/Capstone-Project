@@ -1,14 +1,26 @@
 import styled from 'styled-components/macro';
+import {tagColors} from './BlogTagData';
 
-export default function BlogTag({label, color, backgroundColor}) {
-  const style = {backgroundColor: `${backgroundColor}`, color: `${color}`};
+// console.log(tagColors);
 
-  return <Button style={style}>{label}</Button>;
+export default function BlogTag({tagName}) {
+  const colorVar = tagColors.find(col => col.tag === tagName).color;
+
+  return (
+    <>
+      <Button style={{backgroundColor: colorVar}}>{tagName}</Button>
+    </>
+  );
 }
 
 const Button = styled.button`
+  display: inline-block;
   font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  color: var(--color-font);
+  margin-bottom: 1rem;
+  padding: 0.1rem 1rem;
+  min-width: 6rem;
+  border-radius: var(--radius);
   border: none;
-  border-radius: var(--radius-small);
 `;

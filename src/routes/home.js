@@ -79,6 +79,9 @@ const MoreButton = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+  &:hover {
+    background-color: var(--color-primary);
+  }
 `;
 
 const Video = styled.section`
