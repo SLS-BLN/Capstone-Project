@@ -3,6 +3,7 @@ import {videoEntries} from './VideoData';
 import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
+import BlogTag from '../Blogtag/BlogTag';
 
 export default function Video({style}) {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function Video({style}) {
               </div>
             </VideoClip>
             <div className="description">
-              <p className="tag">{video.tag} </p>
+              <BlogTag tagName={video.tag} />
               <h1>{video.titleShort}</h1>
               <p>{video.description}</p>
             </div>
@@ -44,17 +45,6 @@ const Hero = styled.div`
     margin: 0 3rem 6rem;
   }
 
-  .tag {
-    display: inline-block;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.1rem 1rem;
-    min-width: 6rem;
-    border-radius: var(--radius);
-  }
   h1 {
     font-size: 2.4rem;
     font-weight: 500;
@@ -70,14 +60,17 @@ const Hero = styled.div`
 `;
 
 const BackButton = styled.button`
-  color: var(--font-color);
-  background-color: var(--color-primary-light);
   font-size: 1.2rem;
   font-weight: 500;
+  color: var(--font-color);
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius);
   border: none;
   padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
   margin: 0 3rem 5rem;
+  &:hover {
+    background-color: var(--color-primary);
+  }
 `;
 
 const VideoClip = styled.section`

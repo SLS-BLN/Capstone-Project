@@ -3,6 +3,7 @@ import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
+import BlogTag from '../components/Blogtag/BlogTag';
 
 export default function Home(style) {
   // hard coded at the moment - should be dynamic (newest date)
@@ -13,7 +14,7 @@ export default function Home(style) {
     <>
       <Container key={blog.id} style={style}>
         <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
-        <p className="tag">{blog.tag} </p>
+        <BlogTag tagName={blog.tag} />
         <h1>{blog.title}</h1>
         <p>
           {blog.lead} {blog.text.at(0)}
@@ -48,16 +49,6 @@ const Container = styled.article`
     margin: 2rem 0;
   }
 
-  .tag {
-    display: inline-block;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.1rem 1rem;
-    min-width: 6rem;
-    border-radius: var(--radius);
-  }
   h1 {
     font-size: 2.4rem;
     font-weight: 500;
@@ -79,6 +70,9 @@ const MoreButton = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+  &:hover {
+    background-color: var(--color-primary);
+  }
 `;
 
 const Video = styled.section`

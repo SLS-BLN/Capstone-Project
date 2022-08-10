@@ -3,18 +3,21 @@ import {NavLink} from 'react-router-dom';
 import {bool} from 'prop-types';
 
 export default function Menu({open, setOpen}) {
+  const activeStyle = {
+    color: 'var(--color-secondary)',
+  };
   return (
     <StyledMenu open={open}>
-      <NavLink to="/" onClick={open}>
+      <NavLink to="/" onClick={open} style={({isActive}) => (isActive ? activeStyle : undefined)}>
         Home
       </NavLink>
-      <NavLink to="blog" onClick={open}>
+      <NavLink to="blog" onClick={open} style={({isActive}) => (isActive ? activeStyle : undefined)}>
         Blog
       </NavLink>
-      <NavLink to="video" onClick={open}>
+      <NavLink to="video" onClick={open} style={({isActive}) => (isActive ? activeStyle : undefined)}>
         Video
       </NavLink>
-      <NavLink to="search" onClick={open}>
+      <NavLink to="search" onClick={open} style={({isActive}) => (isActive ? activeStyle : undefined)}>
         Suche
       </NavLink>
     </StyledMenu>

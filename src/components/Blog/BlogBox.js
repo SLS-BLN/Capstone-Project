@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
+import {BlogTagLine} from '../Blogtag/BlogTag';
 
 export default function BlogBox({blog}) {
   let navigate = useNavigate();
@@ -7,7 +8,7 @@ export default function BlogBox({blog}) {
   return (
     <Box>
       <div className="box__image">
-        <p className="tag">{blog.tag} </p>
+        <BlogTagLine tagName={blog.tag} />
         <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
       </div>
       <div className="box__text">
@@ -39,13 +40,6 @@ const Box = styled.article`
   .box__image {
     width: 50%;
     height: 100%;
-  }
-  .tag {
-    font-size: 1.2rem;
-    background-color: var(--color-secondary);
-    color: var(--font-color-dark);
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.01rem;
   }
 
   .box__text {
@@ -89,5 +83,6 @@ const MoreButton = styled.button`
   font-weight: 500;
   border: none;
   padding: 0.25rem 0.5rem;
+  margin-bottom: 0.01rem;
   border-radius: var(--radius);
 `;
