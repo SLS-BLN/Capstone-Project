@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
-import {tagColors} from './BlogTagData.js';
+import {tagColors} from './blog-tag-data';
+
+console.log(test);
 
 export default function BlogTag({tagName}) {
   const colorVar = tagColors.find(col => col.tag === tagName).color;
