@@ -27,9 +27,11 @@ export default styled.createGlobalStyle`
 
   :root {
     --color-primary: #025a7c;
-    --color-primary-light: #078ec1;
+    --color-primary-light: #077fab;
     --color-primary-dark: #2b373c;
     --color-secondary: #ffb400;
+    --color-secondary-light: #fab314;
+    --color-secondary-dark: #966c00;
     --color-white: #fff;
     --color-black: #000;
     --color-grey-dark-1: #434343;

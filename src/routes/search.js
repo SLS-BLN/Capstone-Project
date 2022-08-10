@@ -1,4 +1,4 @@
-import SearchByTag from '../components/Search/SearchByTag';
+import SearchByTag from '../components/Search/search-by-tag';
 import styled from 'styled-components/macro';
 
 export default function Search() {
