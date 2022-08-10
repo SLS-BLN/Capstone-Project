@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {bool} from 'prop-types';
 
 export default function Menu({open, setOpen}) {
-  let activeStyle = {
+  const activeStyle = {
     color: 'var(--color-secondary)',
   };
   return (
