@@ -15,16 +15,16 @@ export default function Video({style}) {
       {videoPost.map(video => (
         <Container key={video.id} style={style}>
           <Hero>
-            <VideoClip className="grid">
+            <VideoClip>
               <div style={{'--aspect-ratio': '16 / 9'}}>
                 <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
               </div>
             </VideoClip>
-            <div className="description">
+            <Description>
               <BlogTag tagName={video.tag} />
               <h1>{video.titleShort}</h1>
               <p>{video.description}</p>
-            </div>
+            </Description>
           </Hero>
           <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
         </Container>
@@ -36,14 +36,8 @@ export default function Video({style}) {
 const Container = styled.div`
   margin-bottom: 10rem;
 `;
-
 const Hero = styled.div`
   background-color: var(--color-grey-dark-2);
-
-  .description {
-    padding: 1rem 0;
-    margin: 0 3rem 6rem;
-  }
 
   h1 {
     font-size: 2.4rem;
@@ -57,6 +51,11 @@ const Hero = styled.div`
     margin-bottom: 1rem;
     line-height: 1.2;
   }
+`;
+
+const Description = styled.article`
+  padding: 1rem 0;
+  margin: 0 3rem 6rem;
 `;
 
 const BackButton = styled.button`
@@ -75,12 +74,9 @@ const BackButton = styled.button`
 
 const VideoClip = styled.section`
   margin-bottom: 2rem;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.1rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.1rem;
 
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;
