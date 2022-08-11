@@ -4,27 +4,16 @@ import {videoEntries} from '../components/Video/VideoData';
 import BlogTag from '../components/Blogtag/BlogTag';
 
 export default function Search() {
-  const tagArray = [];
-  const allEntries = [...blogEntries, ...videoEntries];
-  for (let {tag} of allEntries) {
-    tagArray.push(tag);
-  }
-
-  const uniqueSet = new Set(tagArray);
-  const allTags = [...uniqueSet].sort();
-  console.log(allTags);
-
+  const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
   return (
     <SearchContainer>
-      <main style={{padding: '1rem'}}>
-        <h1>
-          Was möchtest <span>du lernen?</span>
-        </h1>
-        <h2>Suche nach Schlagwort</h2>
-        {allTags.map((tagName, index) => (
-          <BlogTag key={index} tagName={tagName} />
-        ))}
-      </main>
+      <h1>
+        Was möchtest <span>du lernen?</span>
+      </h1>
+      <h2>Suche nach Schlagwort</h2>
+      {allTags.map(tagName => (
+        <BlogTag key={tagName} tagName={tagName} />
+      ))}
     </SearchContainer>
   );
 }
