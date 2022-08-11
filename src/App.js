@@ -7,6 +7,7 @@ import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
 import {Routes, Route} from 'react-router-dom';
 
+import SearchByTag from './components/Search/search-by-tag';
 import Blog from './components/Blog/Blog';
 import Video from './components/Video/Video';
 import Home from './routes/home';
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="video" element={<VideoMain />} />
         <Route path="video/:slug" element={<Video slug={'slug'} />} />
         <Route path="search" element={<Search />} />
+        <Route path="search/:tagName" element={<SearchByTag tagName={'tagName'} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <nav>
