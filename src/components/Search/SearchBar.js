@@ -1,9 +1,16 @@
 import styled from 'styled-components/macro';
+import {useState} from 'react';
 
-export default function SearchBar({handleChange}) {
+export default function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState();
   return (
     <SearchBarContainer>
-      <SearchBarInput type="text" id="search" placeholder="Suchwort eingeben" onChange={handleChange} />
+      <SearchBarInput
+        type="text"
+        id="search"
+        placeholder="Suchwort eingeben"
+        onChange={event => setSearchTerm(event.target.value)}
+      />
     </SearchBarContainer>
   );
 }

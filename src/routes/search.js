@@ -7,10 +7,6 @@ import {useState} from 'react';
 
 export default function Search() {
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
-  const [searchTerm, setSearchTerm] = useState();
-  const handleChange = e => {
-    setSearchTerm(e.target.value);
-  };
 
   // will be replaced by searchTerm
   const searchTermProvisional = 'der';
@@ -27,7 +23,7 @@ export default function Search() {
       <h1>
         Was möchtest <span>du lernen?</span>
       </h1>
-      <SearchBar onChange={handleChange} />
+      <SearchBar onChange={searchTerm} />
       {displayBlogs.map(item => (
         <ItemList key={item.id}>{item.titleShort}</ItemList>
       ))}
