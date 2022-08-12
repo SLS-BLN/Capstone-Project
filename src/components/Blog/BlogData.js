@@ -14,7 +14,7 @@ export const blogEntries = [
     lead: 'Bei einem Dreh ist es neulich wieder passiert: schöne Bilder aus einem kleinen Modeladen, aber kein Ton.',
     author: 'von Stefan L. Schlicker',
     date: '15. Juli 2022',
-    dateUpdated: 'last update: 17. Juli 2022',
+    dateUpdated: ', last update: 17. Juli 2022',
     text: [
       'Als ich das im Schnittprogramm bemerkt habe, war die Laune sofort dahin. All die schöne Atmo weg - kein Dampfbügeleisen zu hören, keine Kundengespräche und kein Surren der Nähmaschine.',
       'Ist gar nicht so schlimm, mag sich der ein oder andere denken. Nun ja, zunächst einmal musste ich für eine Minute Material im fertigen Beitrag Geräusche unterlegen. Das ist mühsam und dauert eine halbe Stunde länger als geplant. Noch schlimmer ist, dass die Original-Atmo den Beitrag viel authentischer gemacht hätte. Das liegt daran, wie unser Gehirn Musik und Geräusche verarbeitet: unterbewusst.',
@@ -41,7 +41,7 @@ export const blogEntries = [
     lead: 'Reichen 2.000 Euro für eine Kamera-Ausrüstung aus? Das geht nur, wenn das Zubehör billig ist.',
     author: 'von Stefan L. Schlicker',
     date: '15. November 2021',
-    dateUpdated: 'last update: 17. Janaur 2022',
+    dateUpdated: ', last update: 17. Janaur 2022',
     text: [
       'Bei kleinem Budget lautet das Motto: das meiste Geld in Kamera und Objektive stecken; bei Licht, Mikrofon und Stativ muss dann gespart werden.',
       'Aber ist dieser Ansatz wirklich sinnvoll? Und nachhaltig? Fakt ist, dass Stative und Mikrofone viele Jahre halten. Das einzige Mikrofon, dass ich jemals ersetzen musste, war ein Sennheiser MKH-40 für 1.400 Euro. Es wurde leider zusammen mit der Kamera und den Speicherkarten in Barcelona geklaut - nach einem wirklich schönen Dreh. Alles futsch.',

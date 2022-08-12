@@ -24,7 +24,7 @@ export default function Blog() {
           <ul>
             <li className="author">{blog.author}</li>
             <li className="date">
-              {blog.date}, {blog.dateUpdated}
+              {blog.date} {blog.dateUpdated}
             </li>
           </ul>
           <div>
@@ -74,6 +74,7 @@ const Container = styled.article`
   .author {
     margin-top: 1.5rem;
     font-size: 1.4rem;
+    font-weight: 400;
   }
 
   h2 {
@@ -85,12 +86,12 @@ const Container = styled.article`
 
   .textbody {
     line-height: 1.4;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.6rem;
   }
 
   .date {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 100;
     margin-bottom: 2rem;
   }
