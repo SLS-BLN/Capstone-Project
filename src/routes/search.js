@@ -11,13 +11,15 @@ export default function Search() {
   const handleChange = e => {
     setSearchTerm(e.target.value);
   };
-  console.log(searchTerm);
 
-  const displayedBlogs = blogEntries.filter(item => {
-    return item.text.join().toLowerCase().includes('warum'.toLowerCase());
+  // will be replaced by searchTerm
+  const searchTermProvisional = 'der';
+
+  const displayBlogs = blogEntries.filter(item => {
+    return item.text.join().toLowerCase().includes(searchTermProvisional.toLowerCase());
   });
-  const displayedVideos = videoEntries.filter(item => {
-    return item.description.toLowerCase().includes('Zeit'.toLowerCase());
+  const displayVideos = videoEntries.filter(item => {
+    return item.description.toLowerCase().includes(searchTermProvisional.toLowerCase());
   });
 
   return (
@@ -26,10 +28,10 @@ export default function Search() {
         Was möchtest <span>du lernen?</span>
       </h1>
       <SearchBar onChange={handleChange} />
-      {displayedBlogs.map(item => (
+      {displayBlogs.map(item => (
         <ItemList key={item.id}>{item.titleShort}</ItemList>
       ))}
-      {displayedVideos.map(item => (
+      {displayVideos.map(item => (
         <ItemList key={item.title}>{item.titleShort}</ItemList>
       ))}
 
