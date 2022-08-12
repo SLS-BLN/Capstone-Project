@@ -4,19 +4,20 @@ import {videoEntries} from '../components/Video/VideoData';
 import BlogTag from '../components/Blogtag/BlogTag';
 import SearchBar from '../components/Search/SearchBar';
 import {useState} from 'react';
-import ItemList from '../components/Search/ItemList';
 
 export default function Search() {
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
+  const [searchTerm, setSearchTerm] = useState();
+  const handleChange = e => {
+    setSearchTerm(e.target.value);
+  };
+  console.log(searchTerm);
 
-  const [searchTerm, setSearchTerm] = useState('');
-  function onSearchChange(searchTerm) {
-    setSearchTerm(searchTerm);
-  }
-
-  const items = [...blogEntries, ...videoEntries];
-  const displayedItems = items.filter(item => {
-    return item.tag.toLowerCase().includes('Dreh'.toLowerCase());
+  const displayedBlogs = blogEntries.filter(item => {
+    return item.text.join().toLowerCase().includes('warum'.toLowerCase());
+  });
+  const displayedVideos = videoEntries.filter(item => {
+    return item.description.toLowerCase().includes('Zeit'.toLowerCase());
   });
 
   return (
@@ -24,8 +25,14 @@ export default function Search() {
       <h1>
         Was möchtest <span>du lernen?</span>
       </h1>
-      <SearchBar searchTerm={searchTerm} onSearchChange={onSearchChange} />
-      <ItemList items={displayedItems} />
+      <SearchBar onChange={handleChange} />
+      {displayedBlogs.map(item => (
+        <ItemList key={item.id}>{item.titleShort}</ItemList>
+      ))}
+      {displayedVideos.map(item => (
+        <ItemList key={item.title}>{item.titleShort}</ItemList>
+      ))}
+
       <h2>Suche nach Schlagwort</h2>
       {allTags.map(tagName => (
         <BlogTag key={tagName} tagName={tagName} />
@@ -33,6 +40,10 @@ export default function Search() {
     </SearchContainer>
   );
 }
+
+const ItemList = styled.div`
+  color: var(--font-color);
+`;
 
 const SearchContainer = styled.div`
   display: flex;
@@ -62,22 +73,3 @@ const SearchContainer = styled.div`
     margin: 1rem 1rem;
   }
 `;
-
-// const ItemList = styled.ul`
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 0 3rem;
-//   padding-bottom: 2rem;
-//   list-style-type: none;
-//   width: 100%;
-//   height: 100%;
-//   overflow-y: scroll;
-//   overflow-x: hidden;
-//   scrollbar-width: none;
-//   ::-webkit-scrollbar {
-//     width: 0px;
-//     background: transparent;
-//   }
-// `;

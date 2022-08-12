@@ -1,25 +1,9 @@
 import styled from 'styled-components/macro';
 
-export default function SearchBar({onSearchChange, searchTerm}) {
-  function handleChange(e) {
-    const searchTerm = e.target.value;
-    console.log(searchTerm);
-
-    onSearchChange(searchTerm);
-  }
-
+export default function SearchBar({handleChange}) {
   return (
     <SearchBarContainer>
-      <SearchBarInput
-        type="text"
-        id="search"
-        placeholder="Suchwort eingeben"
-        value={searchTerm}
-        onChange={handleChange}
-      />
-      <SearchBarButton type="submit">
-        <SearchIcon />
-      </SearchBarButton>
+      <SearchBarInput type="text" id="search" placeholder="Suchwort eingeben" onChange={handleChange} />
     </SearchBarContainer>
   );
 }
@@ -28,22 +12,9 @@ const SearchBarContainer = styled.div`
   display: flex;
 `;
 const SearchBarInput = styled.input`
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 200;
-  color: var(--font-color);
+  padding: 1rem;
+  color: var(--font-color-dark);
   border-radius: var(--radius);
-`;
-const SearchBarButton = styled.button`
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--font-color);
-  border-radius: var(--radius);
-  border: none;
-  padding: 0.25rem 0.5rem;
-  margin-bottom: 1rem;
-`;
-
-const SearchIcon = styled.img`
-  width: 1.5rem;
-  height: 1.5rem;
 `;
