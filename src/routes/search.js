@@ -7,15 +7,16 @@ import {useState} from 'react';
 
 export default function Search() {
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
+  const [searchTerm, setSearchTerm] = useState('');
 
   // will be replaced by searchTerm
-  const searchTermProvisional = 'der';
+  // const searchTermProvisional = 'der';
 
   const displayBlogs = blogEntries.filter(item => {
-    return item.text.join().toLowerCase().includes(searchTermProvisional.toLowerCase());
+    return item.text.join().toLowerCase().includes(searchTerm.toLowerCase());
   });
   const displayVideos = videoEntries.filter(item => {
-    return item.description.toLowerCase().includes(searchTermProvisional.toLowerCase());
+    return item.description.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
   return (
@@ -23,7 +24,7 @@ export default function Search() {
       <h1>
         Was möchtest <span>du lernen?</span>
       </h1>
-      <SearchBar onChange={searchTerm} />
+      <SearchBar onSearchTermChange={setSearchTerm} />
       {displayBlogs.map(item => (
         <ItemList key={item.id}>{item.titleShort}</ItemList>
       ))}
