@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import styled from 'styled-components/macro';
-import {ReactComponent as Logo} from './logo.svg';
+import {ReactComponent as Logo} from './icons/logo.svg';
 import {Link, Outlet} from 'react-router-dom';
 
 import Burger from './components/Burger/Burger';

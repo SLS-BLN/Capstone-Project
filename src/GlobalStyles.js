@@ -34,6 +34,7 @@ export default styled.createGlobalStyle`
     --color-secondary-dark: #966c00;
     --color-white: #fff;
     --color-black: #000;
+    --color-grey-light: #888;
     --color-grey-dark-1: #434343;
     --color-grey-dark-2: #333;
     --font-color: #f7f7f7;

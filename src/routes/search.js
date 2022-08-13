@@ -21,7 +21,7 @@ export default function Search() {
   });
 
   const numberOfResults = displayVideos.length + displayBlogs.length;
-
+  console.log(searchTerm);
   return (
     <>
       <FormSearch>
@@ -55,7 +55,7 @@ const FormSearch = styled.section`
 `;
 
 const HeadingPrimary = styled.h1`
-  font-size: 2.6rem;
+  font-size: 2rem;
   text-align: center;
   margin: 2.5rem 0;
 
