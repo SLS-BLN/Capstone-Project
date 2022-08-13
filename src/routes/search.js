@@ -8,6 +8,7 @@ import {useState} from 'react';
 export default function Search() {
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
   const [searchTerm, setSearchTerm] = useState('');
+  // const [isActive, setIsActive] = useState(0);
 
   // will be replaced by searchTerm
   // const searchTermProvisional = 'der';
@@ -19,13 +20,14 @@ export default function Search() {
     return item.description.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
+  const numberOfResults = displayVideos.length + displayBlogs.length;
+
   return (
     <>
       <FormSearch>
-        <HeadingPrimary>
-          Was möchtest <span>du lernen?</span>
-        </HeadingPrimary>
+        <HeadingPrimary>Was suchst du?</HeadingPrimary>
         <SearchBar onSearchTermChange={setSearchTerm} />
+        {numberOfResults === 0 && <NoResult>Die Suche ergab leider kein Ergebnis</NoResult>}
         {displayBlogs.map(item => (
           <ItemList key={item.id}>{item.titleShort}</ItemList>
         ))}
@@ -55,11 +57,17 @@ const FormSearch = styled.section`
 const HeadingPrimary = styled.h1`
   font-size: 2.6rem;
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 2.5rem 0;
 
   span {
     display: block;
   }
+`;
+
+const NoResult = styled.p`
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 1rem;
 `;
 
 const ItemList = styled.div`
