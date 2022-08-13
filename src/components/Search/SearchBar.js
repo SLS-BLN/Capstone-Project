@@ -8,11 +8,12 @@ export default function SearchBar({onSearchTermChange}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    onSearchTermChange(e.target.value);
+    console.log('submit');
+    // onSearchTermChange(e.target.value);
   };
 
   return (
-    <SearchBarContainer type="submit" onClick={handleSubmit}>
+    <SearchBarContainer type="submit" onSubmit={handleSubmit}>
       <SearchBarInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
     </SearchBarContainer>
   );
