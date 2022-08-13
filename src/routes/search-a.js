@@ -2,36 +2,15 @@ import styled from 'styled-components/macro';
 import {blogEntries} from '../components/Blog/BlogData';
 import {videoEntries} from '../components/Video/VideoData';
 import BlogTag from '../components/Blogtag/BlogTag';
-import SearchBar from '../components/Search/SearchBar';
-import {useState} from 'react';
 
 export default function Search() {
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
-  const [searchTerm, setSearchTerm] = useState('');
-
-  // will be replaced by searchTerm
-  // const searchTermProvisional = 'der';
-
-  const displayBlogs = blogEntries.filter(item => {
-    return item.text.join().toLowerCase().includes(searchTerm.toLowerCase());
-  });
-  const displayVideos = videoEntries.filter(item => {
-    return item.description.toLowerCase().includes(searchTerm.toLowerCase());
-  });
-
   return (
     <>
       <FormSearch>
         <HeadingPrimary>
           Was möchtest <span>du lernen?</span>
         </HeadingPrimary>
-        <SearchBar onSearchTermChange={setSearchTerm} />
-        {displayBlogs.map(item => (
-          <ItemList key={item.id}>{item.titleShort}</ItemList>
-        ))}
-        {displayVideos.map(item => (
-          <ItemList key={item.title}>{item.titleShort}</ItemList>
-        ))}
       </FormSearch>
       <TagSearch>
         <HeadingSecondary>Suche nach Schlagwort</HeadingSecondary>
@@ -60,10 +39,6 @@ const HeadingPrimary = styled.h1`
   span {
     display: block;
   }
-`;
-
-const ItemList = styled.div`
-  color: var(--font-color);
 `;
 
 const TagSearch = styled.section`
