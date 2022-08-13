@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {BlogTagLine} from '../Blogtag/BlogTag';
 
 export default function BlogBox({blog}) {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Box>

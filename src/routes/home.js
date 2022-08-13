@@ -8,7 +8,7 @@ import BlogTag from '../components/Blogtag/BlogTag';
 export default function Home(style) {
   // hard coded at the moment - should be dynamic (newest date)
   const blog = blogEntries.at(-1);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>

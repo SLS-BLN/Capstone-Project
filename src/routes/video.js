@@ -7,7 +7,7 @@ import BlogTag from '../components/Blogtag/BlogTag';
 export default function VideoMain() {
   // hard coded at the moment - should be dynamic (newest date)
   const video = videoEntries.at(-1);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Container>
