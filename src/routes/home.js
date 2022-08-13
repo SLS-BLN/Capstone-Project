@@ -76,7 +76,8 @@ const MoreButton = styled.button`
 `;
 
 const Video = styled.section`
-  margin: 3rem 0;
+  margin-top: 3rem;
+  padding-bottom: 4rem;
 
   .grid {
     display: grid;

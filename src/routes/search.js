@@ -25,7 +25,7 @@ export default function Search() {
   return (
     <>
       <FormSearch>
-        <HeadingPrimary>Unsere Inhalte:</HeadingPrimary>
+        <HeadingPrimary>Lust auf mehr?</HeadingPrimary>
         <SearchBar onSearchTermChange={setSearchTerm} />
         {numberOfResults === 0 && <NoResult>Die Suche ergab leider kein Ergebnis</NoResult>}
         {searchTermLength > 2 &&
@@ -96,15 +96,12 @@ const NoResult = styled.p`
   margin-top: 1rem;
 `;
 
-const ItemList = styled.div`
-  color: var(--font-color);
-`;
-
 const TagSearch = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   margin: 0 3rem;
+  padding-bottom: 40rem;
 `;
 
 const HeadingSecondary = styled.h2`
@@ -112,25 +109,6 @@ const HeadingSecondary = styled.h2`
   text-align: center;
   margin-bottom: 1rem;
   grid-column: 1 / -1;
-`;
-
-const Container = styled.section`
-  padding: 0 3rem 10rem;
-  background-color: var(--color-grey-dark-2);
-
-  h1 {
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 2rem 0 3rem;
-  }
-
-  span {
-    font-size: 2rem;
-    font-weight: 700;
-    padding-left: 0.3rem;
-    color: var(--color-secondary-light);
-  }
 `;
 
 const ResultBox = styled.article`
@@ -198,19 +176,4 @@ const MoreButton = styled.button`
   border: none;
   margin-bottom: 0.01rem;
   border-radius: var(--radius);
-`;
-
-const BackButton = styled.button`
-  display: block;
-  color: var(--font-color);
-  background-color: var(--color-primary-light);
-  font-size: 1.2rem;
-  font-weight: 500;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  margin: 5rem 0;
-  &:hover {
-    background-color: var(--color-primary);
-  }
 `;
