@@ -6,13 +6,13 @@ export default function SearchBar({onSearchTermChange}) {
     onSearchTermChange(e.target.value);
   };
 
-  const handleClick = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     onSearchTermChange(e.target.value);
   };
 
   return (
-    <SearchBarContainer type="submit" onClick={handleClick}>
+    <SearchBarContainer type="submit" onClick={handleSubmit}>
       <SearchBarInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
     </SearchBarContainer>
   );
