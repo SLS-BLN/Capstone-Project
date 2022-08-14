@@ -102,6 +102,10 @@ const TagSearch = styled.section`
   grid-gap: 1rem;
   margin: 0 3rem;
   padding-bottom: 40rem;
+
+  button {
+    padding: 0.5rem;
+  }
 `;
 
 const HeadingSecondary = styled.h2`

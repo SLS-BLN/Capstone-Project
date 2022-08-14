@@ -1,6 +1,6 @@
 import {Link, Outlet} from 'react-router-dom';
 import {ReactComponent as Logo} from './icons/logo.svg';
-import {Routes, Route} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
 import styled from 'styled-components/macro';
 import {useState, useEffect} from 'react';
 
@@ -19,6 +19,7 @@ import VideoMain from './routes/video';
 
 export default function App() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (open) {
@@ -31,7 +32,13 @@ export default function App() {
   return (
     <Wrapper>
       <Header>
-        <Logo />
+        <HomeButton
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          <Logo />
+        </HomeButton>
         <Burger open={open} setOpen={setOpen} />
       </Header>
       <Menu open={open} setOpen={open} />
@@ -63,6 +70,7 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
+  height: 100vh;
 `;
 
 const Header = styled.header`
@@ -78,4 +86,9 @@ const Header = styled.header`
     width: 8em;
     height: 7rem;
   }
+`;
+
+const HomeButton = styled.button`
+  background-color: transparent;
+  border: none;
 `;

@@ -47,6 +47,11 @@ const Carousel = styled.section`
 
   .btn {
     padding-bottom: 2rem;
+
+    &:hover {
+      color: var(--color-primary);
+      cursor: pointer;
+    }
   }
 
   .btn--left {
@@ -60,7 +65,7 @@ const Carousel = styled.section`
 
 const Button = styled.button`
   font-size: 2.4rem;
-  color: var(--color-primary-light);
+  color: var(--font-color);
   border: none;
   background-color: transparent;
 `;
