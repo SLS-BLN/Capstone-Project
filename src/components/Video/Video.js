@@ -34,7 +34,6 @@ export default function Video({style}) {
 }
 
 const Container = styled.div`
-  margin-bottom: 0rem;
   padding-bottom: 40rem;
 `;
 const Hero = styled.div`
