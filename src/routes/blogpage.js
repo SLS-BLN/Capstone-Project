@@ -1,4 +1,5 @@
-import BlogBox from '../components/Blog/BlogBox';
+import {BlogBoxPixRight} from '../components/Blog/BlogBox';
+import {BlogBoxPixLeft} from '../components/Blog/BlogBox';
 import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
 
@@ -6,7 +7,13 @@ export default function BlogMain() {
   return (
     <Section>
       {blogEntries.map((blog, index) => {
-        return <BlogBox key={index} blog={blog} />;
+        // console.log(index);
+
+        if (index % 4 === 0) {
+          return <BlogBoxPixRight key={index} blog={blog} />;
+        } else {
+          return <BlogBoxPixLeft key={index} blog={blog} />;
+        }
       })}
     </Section>
   );

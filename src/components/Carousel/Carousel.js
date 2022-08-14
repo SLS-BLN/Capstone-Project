@@ -2,7 +2,7 @@ import {useState} from 'react';
 import styled from 'styled-components';
 import {FaChevronRight, FaChevronLeft} from 'react-icons/fa';
 import {blogEntries} from '../Blog/BlogData';
-import BlogBox from '../Blog/BlogBox';
+import {BlogBoxPixRight} from '../Blog/BlogBox';
 
 export default function BlogCarousel() {
   const [current, setCurrent] = useState(0);
@@ -26,7 +26,7 @@ export default function BlogCarousel() {
         if (index === current) {
           return (
             <div key={index}>
-              <BlogBox blog={slide} />
+              <BlogBoxPixRight blog={slide} />
             </div>
           );
         } else {
