@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player';
-import {ReactComponent as Ellipse} from '../icons/ellipse.svg';
 
 export default function Cta() {
   const navigate = useNavigate();

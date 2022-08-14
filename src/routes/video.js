@@ -79,7 +79,6 @@ export default function VideoMain() {
 
 const Hero = styled.div`
   background-color: var(--color-grey-dark-2);
-  background-color: var(--color-grey-dark-2);
   background-image: url("data:image/svg+xml,%3Csvg width='529' height='502' viewBox='0 0 529 502' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M529 251C529 389.623 410.579 502 264.5 502C118.421 502 0 389.623 0 251C0 112.377 118.421 0 264.5 0C410.579 0 529 112.377 529 251Z' fill='%234FB5DC' fill-opacity='0.22'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: top 20rem left 20rem;
