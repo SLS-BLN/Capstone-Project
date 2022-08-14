@@ -104,7 +104,7 @@ const TagSearch = styled.section`
   padding-bottom: 40rem;
 
   button {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 `;
 

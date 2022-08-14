@@ -48,7 +48,7 @@ const Carousel = styled.section`
   .btn {
     padding-bottom: 2rem;
 
-    &:hover {
+    &:active {
       color: var(--color-primary);
       cursor: pointer;
     }
