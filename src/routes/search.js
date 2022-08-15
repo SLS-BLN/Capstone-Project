@@ -41,7 +41,9 @@ export default function Search() {
                 </h2>
                 <p className="tag tag-blog">Blog</p>
               </MoreButton>
-              <p>{blog.lead}</p>
+              <p>
+                {blog.lead} {blog.text[0]}{' '}
+              </p>
             </ResultBox>
           ))}
         {searchTermLength > 2 &&
