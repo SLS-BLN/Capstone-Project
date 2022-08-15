@@ -9,7 +9,7 @@ export function BlogBox({blog}) {
     <Box>
       <div className="box__image">
         <BlogTagLine tagName={blog.tag} />
-        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
+        <img width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
       </div>
       <div className="box__text">
         <h2>{blog.titleShort}</h2>
@@ -23,32 +23,6 @@ export function BlogBox({blog}) {
         >
           Mehr dazu ...
         </MoreButton>
-      </div>
-    </Box>
-  );
-}
-
-export function BlogBoxPixLeft({blog}) {
-  const navigate = useNavigate();
-
-  return (
-    <Box>
-      <div className="box__text">
-        <h2>{blog.titleShort}</h2>
-        <Paragraph>
-          {blog.lead} {blog.text}
-        </Paragraph>
-        <MoreButton
-          onClick={() => {
-            navigate(`/blog/${blog.slug}`);
-          }}
-        >
-          Mehr dazu ...
-        </MoreButton>
-      </div>
-      <div className="box__image">
-        <BlogTagLine tagName={blog.tag} />
-        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
       </div>
     </Box>
   );
@@ -66,6 +40,11 @@ const Box = styled.article`
   .box__image {
     width: 50%;
     height: 100%;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
   }
 
   .box__text {

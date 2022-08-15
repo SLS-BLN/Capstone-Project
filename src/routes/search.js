@@ -80,6 +80,7 @@ const FormSearch = styled.section`
   align-items: center;
   margin: 0 3rem;
   padding-bottom: 2rem;
+  background-color: var(--color-grey-dark-2);
 `;
 
 const HeadingPrimary = styled.h1`
@@ -119,6 +120,7 @@ const HeadingSecondary = styled.h2`
 
 const ResultBox = styled.article`
   margin-bottom: 1.25rem;
+  background-color: var(--color-grey-dark-2);
 
   h2 {
     display: inline-block;
