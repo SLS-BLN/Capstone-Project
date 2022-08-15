@@ -2,9 +2,8 @@ import styled from 'styled-components/macro';
 import {tagColors} from './blog-tag-data';
 import {useNavigate} from 'react-router-dom';
 
-
 export default function BlogTag({tagName}) {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const colorVar = tagColors.find(col => col.tag === tagName).color;
 
   return (
@@ -31,6 +30,10 @@ const Button = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   margin-bottom: 1rem;
+  &:hover {
+    color: var(--color-grey-light-1);
+    cursor: pointer;
+  }
 `;
 
 export function BlogTagLine({tagName}) {

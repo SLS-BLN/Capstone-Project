@@ -34,7 +34,7 @@ export default function Video({style}) {
 }
 
 const Container = styled.div`
-  margin-bottom: 10rem;
+  padding-bottom: 40rem;
 `;
 const Hero = styled.div`
   background-color: var(--color-grey-dark-2);
@@ -55,7 +55,7 @@ const Hero = styled.div`
 
 const Description = styled.article`
   padding: 1rem 0;
-  margin: 0 3rem 6rem;
+  margin: 0 3rem 1rem;
 `;
 
 const BackButton = styled.button`
@@ -74,9 +74,6 @@ const BackButton = styled.button`
 
 const VideoClip = styled.section`
   margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 0.1rem;
 
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;

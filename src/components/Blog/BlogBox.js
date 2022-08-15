@@ -2,8 +2,8 @@ import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import {BlogTagLine} from '../Blogtag/BlogTag';
 
-export default function BlogBox({blog}) {
-  let navigate = useNavigate();
+export function BlogBox({blog}) {
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -13,9 +13,9 @@ export default function BlogBox({blog}) {
       </div>
       <div className="box__text">
         <h2>{blog.titleShort}</h2>
-        <p>
+        <Paragraph>
           {blog.lead} {blog.text}
-        </p>
+        </Paragraph>
         <MoreButton
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
@@ -23,6 +23,32 @@ export default function BlogBox({blog}) {
         >
           Mehr dazu ...
         </MoreButton>
+      </div>
+    </Box>
+  );
+}
+
+export function BlogBoxPixLeft({blog}) {
+  const navigate = useNavigate();
+
+  return (
+    <Box>
+      <div className="box__text">
+        <h2>{blog.titleShort}</h2>
+        <Paragraph>
+          {blog.lead} {blog.text}
+        </Paragraph>
+        <MoreButton
+          onClick={() => {
+            navigate(`/blog/${blog.slug}`);
+          }}
+        >
+          Mehr dazu ...
+        </MoreButton>
+      </div>
+      <div className="box__image">
+        <BlogTagLine tagName={blog.tag} />
+        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
       </div>
     </Box>
   );
@@ -56,24 +82,24 @@ const Box = styled.article`
     text-overflow: ellipsis;
     padding: 0.5rem 0;
   }
+`;
 
-  p {
-    font-size: 1.2rem;
-    line-height: 1.2;
-    display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
-    -webkit-line-clamp: var(--line-clamp, 5); /* stylelint-disable-line property-no-vendor-prefix */
-    -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
-    word-break: var(--word-break, 'none');
-    overflow: hidden;
-    hyphens: auto;
-    text-align: var(--align, left);
+const Paragraph = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.2;
+  display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
+  -webkit-line-clamp: var(--line-clamp, 5); /* stylelint-disable-line property-no-vendor-prefix */
+  -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
+  word-break: var(--word-break, 'none');
+  overflow: hidden;
+  hyphens: auto;
+  text-align: var(--align, left);
 
-    --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
-    --delay: calc(-1s * (var(--is-single-line, 1) - 1));
+  --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
+  --delay: calc(-1s * (var(--is-single-line, 1) - 1));
 
-    animation: states 1s var(--delay) paused;
-    margin-bottom: 1rem;
-  }
+  animation: states 1s var(--delay) paused;
+  margin-bottom: 1rem;
 `;
 
 const MoreButton = styled.button`
@@ -85,4 +111,8 @@ const MoreButton = styled.button`
   padding: 0.25rem 0.5rem;
   margin-bottom: 0.01rem;
   border-radius: var(--radius);
+  &:hover {
+    background-color: var(--color-primary);
+    cursor: pointer;
+  }
 `;

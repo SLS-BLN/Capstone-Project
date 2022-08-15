@@ -1,4 +1,4 @@
-import BlogBox from '../components/Blog/BlogBox';
+import {BlogBox} from '../components/Blog/BlogBox';
 import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
 
@@ -14,4 +14,5 @@ export default function BlogMain() {
 
 const Section = styled.section`
   margin: 2rem 3rem 0;
+  padding-bottom: 1rem;
 `;
