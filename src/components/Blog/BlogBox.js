@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import {BlogTagLine} from '../Blogtag/BlogTag';
 
-export function BlogBoxPixRight({blog}) {
+export function BlogBox({blog}) {
   const navigate = useNavigate();
 
   return (

@@ -23,6 +23,7 @@ const SearchBarContainer = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 3.5rem;
 `;
 const SearchBarInput = styled.input`
   font-size: 1.6rem;
