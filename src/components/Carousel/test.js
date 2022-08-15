@@ -44,15 +44,16 @@ const Carousel = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-
   .btn {
     padding-bottom: 2rem;
+    &:active {
+      color: var(--color-primary);
+      cursor: pointer;
+    }
   }
-
   .btn--left {
     padding-left: 0.5rem;
   }
-
   .btn--right {
     padding-right: 0.5rem;
   }
@@ -60,7 +61,7 @@ const Carousel = styled.section`
 
 const Button = styled.button`
   font-size: 2.4rem;
-  color: var(--color-primary-light);
+  color: var(--font-color);
   border: none;
   background-color: transparent;
 `;
