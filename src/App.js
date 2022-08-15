@@ -70,7 +70,6 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
-  height: 100vh;
 `;
 
 const Header = styled.header`
