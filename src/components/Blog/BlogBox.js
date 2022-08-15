@@ -9,7 +9,7 @@ export function BlogBox({blog}) {
     <Box>
       <div className="box__image">
         <BlogTagLine tagName={blog.tag} />
-        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} />
+        <img src={blog.imgUrlSquare} alt={blog.imgAlt} width={'100%'} height={'100%'} loading="lazy" />
       </div>
       <div className="box__text">
         <h2>{blog.titleShort}</h2>
