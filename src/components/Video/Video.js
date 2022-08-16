@@ -59,16 +59,16 @@ const Description = styled.article`
 `;
 
 const BackButton = styled.button`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--font-color);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary);
   border-radius: var(--radius);
   border: none;
   padding: 0.25rem 0.5rem;
   margin: 0 3rem 5rem;
   &:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
   }
 `;
 

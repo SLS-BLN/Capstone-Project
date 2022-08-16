@@ -134,7 +134,7 @@ const ResultBox = styled.article`
 const MoreButton = styled.button`
   color: var(--font-color);
   background-color: var(--color-grey-dark-2);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   border: none;
   margin-bottom: 0.01rem;
@@ -144,14 +144,14 @@ const MoreButton = styled.button`
 const BackButton = styled.button`
   display: block;
   color: var(--font-color);
-  background-color: var(--color-primary-light);
-  font-size: 1.2rem;
+  background-color: var(--color-primary);
+  font-size: 1.4rem;
   font-weight: 500;
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   margin: 5rem 0;
   &:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
   }
 `;

@@ -79,15 +79,14 @@ const Header = styled.header`
   background-color: var(--color-primary);
   max-width: 60rem;
   width: 100%;
-
-  svg {
-    margin-left: 3rem;
-    width: 9em;
-    height: 8rem;
-  }
 `;
 
 const HomeButton = styled.button`
   background-color: transparent;
   border: none;
+
+  svg {
+    margin: 1.5rem 0 1.5rem 3rem;
+    height: 4rem;
+  }
 `;

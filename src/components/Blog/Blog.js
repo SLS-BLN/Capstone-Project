@@ -15,7 +15,7 @@ export default function Blog() {
       {blogPost.map(blog => (
         <Container key={blog.id}>
           <div>
-            <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
+            <img src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
             <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
             <BlogTag tagName={blog.tag} />
           </div>
@@ -100,15 +100,15 @@ const Container = styled.article`
 const BackButton = styled.button`
   display: block;
   color: var(--font-color);
-  background-color: var(--color-primary-light);
-  font-size: 1.2rem;
+  background-color: var(--color-primary);
+  font-size: 1.4rem;
   font-weight: 500;
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   margin-bottom: 1rem;
   &:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     cursor: pointer;
   }
 `;

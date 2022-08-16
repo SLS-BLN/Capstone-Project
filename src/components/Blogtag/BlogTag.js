@@ -23,7 +23,7 @@ export default function BlogTag({tagName}) {
 }
 
 const Button = styled.button`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--color-font);
   border-radius: var(--radius);

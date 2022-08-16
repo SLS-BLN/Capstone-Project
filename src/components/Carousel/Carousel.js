@@ -60,7 +60,7 @@ const Carousel = styled.section`
 
 const Button = styled.button`
   font-size: 2.4rem;
-  color: var(--color-primary-light);
+  color: var(--font-color);
   border: none;
   background-color: transparent;
 `;
