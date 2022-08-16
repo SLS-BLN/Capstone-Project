@@ -82,8 +82,8 @@ const Header = styled.header`
 
   svg {
     margin-left: 3rem;
-    width: 8em;
-    height: 7rem;
+    width: 9em;
+    height: 8rem;
   }
 `;
 
