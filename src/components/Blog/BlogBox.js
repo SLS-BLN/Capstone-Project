@@ -83,7 +83,7 @@ const Paragraph = styled.p`
 
 const MoreButton = styled.button`
   color: var(--font-color);
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary);
   font-size: 1.2rem;
   font-weight: 500;
   border: none;
@@ -91,7 +91,7 @@ const MoreButton = styled.button`
   margin-bottom: 0.01rem;
   border-radius: var(--radius);
   &:hover {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-dark);
     cursor: pointer;
   }
 `;

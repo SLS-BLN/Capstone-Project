@@ -37,7 +37,7 @@ export default styled.createGlobalStyle`
     --color-grey-light: #888;
     --color-grey-light-1: #999;
     --color-grey-dark-1: #434343;
-    --color-grey-dark-2: #333;
+    --color-grey-dark-2: #323232;
     --font-color: #f7f7f7;
     --font-color-dark: #333;
     --tag-color-1: #545456;

@@ -4,6 +4,7 @@ import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
 import BlogTag from '../Blogtag/BlogTag';
+import BackButton from '../Buttons/BackButton';
 
 export default function Video({style}) {
   const navigate = useNavigate();
@@ -26,7 +27,9 @@ export default function Video({style}) {
               <p>{video.description}</p>
             </Description>
           </Hero>
-          <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
+          <Section>
+            <BackButton />
+          </Section>
         </Container>
       ))}
     </>
@@ -58,20 +61,6 @@ const Description = styled.article`
   margin: 0 3rem 1rem;
 `;
 
-const BackButton = styled.button`
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--font-color);
-  background-color: var(--color-primary-light);
-  border-radius: var(--radius);
-  border: none;
-  padding: 0.25rem 0.5rem;
-  margin: 0 3rem 5rem;
-  &:hover {
-    background-color: var(--color-primary);
-  }
-`;
-
 const VideoClip = styled.section`
   margin-bottom: 2rem;
 
@@ -97,4 +86,8 @@ const VideoClip = styled.section`
       height: 100%;
     }
   }
+`;
+
+const Section = styled.div`
+  margin: 0 3rem 5rem;
 `;

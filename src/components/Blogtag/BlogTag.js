@@ -7,23 +7,21 @@ export default function BlogTag({tagName}) {
   const colorVar = tagColors.find(col => col.tag === tagName).color;
 
   return (
-    <>
-      <Button
-        style={{backgroundColor: colorVar}}
-        role="navigation"
-        aria-label={`Zeige alle Artikel und Videos zum Thema ${tagName}`}
-        onClick={() => {
-          navigate(`/search/${tagName}`.toLowerCase());
-        }}
-      >
-        {tagName}
-      </Button>
-    </>
+    <Button
+      style={{backgroundColor: colorVar}}
+      role="navigation"
+      aria-label={`Zeige alle Artikel und Videos zum Thema ${tagName}`}
+      onClick={() => {
+        navigate(`/search/${tagName}`.toLowerCase());
+      }}
+    >
+      {tagName}
+    </Button>
   );
 }
 
 const Button = styled.button`
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: var(--color-font);
   border-radius: var(--radius);
@@ -38,12 +36,7 @@ const Button = styled.button`
 
 export function BlogTagLine({tagName}) {
   const colorVar = tagColors.find(col => col.tag === tagName).color;
-
-  return (
-    <>
-      <Paragraph style={{backgroundColor: colorVar ? colorVar : 'black'}}>{tagName}</Paragraph>
-    </>
-  );
+  return <Paragraph style={{backgroundColor: colorVar ? colorVar : 'black'}}>{tagName}</Paragraph>;
 }
 
 const Paragraph = styled.div`

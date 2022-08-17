@@ -70,6 +70,7 @@ const Wrapper = styled.main`
   max-width: 60rem;
   margin: 0 auto;
   background-color: var(--color-grey-dark-2);
+  min-height: 100vh;
 `;
 
 const Header = styled.header`
@@ -79,15 +80,14 @@ const Header = styled.header`
   background-color: var(--color-primary);
   max-width: 60rem;
   width: 100%;
-
-  svg {
-    margin-left: 3rem;
-    width: 8em;
-    height: 7rem;
-  }
 `;
 
 const HomeButton = styled.button`
   background-color: transparent;
   border: none;
+
+  svg {
+    margin: 1.5rem 0 1.5rem 3rem;
+    height: 4rem;
+  }
 `;
