@@ -130,7 +130,7 @@ const ResultBox = styled.article`
     margin: 1rem 0 0;
     color: var(--font-color);
     text-decoration: underline;
-    text-decoration-color: var(--color-secondary-dark);
+    text-decoration-color: var(--font-color);
     text-underline-offset: 0.15rem;
     margin-right: 1.25rem;
   }
