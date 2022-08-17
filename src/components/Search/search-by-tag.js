@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import {videoEntries} from '../Video/VideoData';
 import {blogEntries} from '../Blog/BlogData';
+import BackButton from '../Buttons/BackButton';
 
 export default function SearchByTag() {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ export default function SearchByTag() {
             <p>{video.description}</p>
           </ResultBox>
         ))}
-        <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
+        <BackButton />
       </Container>
     </>
   );
@@ -139,19 +140,4 @@ const MoreButton = styled.button`
   border: none;
   margin-bottom: 0.01rem;
   border-radius: var(--radius);
-`;
-
-const BackButton = styled.button`
-  display: block;
-  color: var(--font-color);
-  background-color: var(--color-primary);
-  font-size: 1.4rem;
-  font-weight: 500;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  margin: 5rem 0;
-  &:hover {
-    background-color: var(--color-primary-dark);
-  }
 `;

@@ -2,11 +2,10 @@ import styled from 'styled-components/macro';
 import {blogEntries} from './BlogData';
 import {nanoid} from 'nanoid';
 import {useParams} from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
 import BlogTag from '../Blogtag/BlogTag';
+import BackButton from '../Buttons/BackButton';
 
 export default function Blog() {
-  const navigate = useNavigate();
   const {slug} = useParams();
   const blogPost = blogEntries.filter(item => item.slug === slug);
 
@@ -16,7 +15,7 @@ export default function Blog() {
         <Container key={blog.id}>
           <div>
             <img src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
-            <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
+            <BackButton />
             <BlogTag tagName={blog.tag} />
           </div>
           <h1>{blog.title}</h1>
@@ -38,7 +37,7 @@ export default function Blog() {
               )
             )}
           </div>
-          <BackButton onClick={() => navigate(-1)}>Zurück</BackButton>
+          <BackButton />
         </Container>
       ))}
     </>
@@ -94,21 +93,5 @@ const Container = styled.article`
     font-size: 1.2rem;
     font-weight: 100;
     margin-bottom: 2rem;
-  }
-`;
-
-const BackButton = styled.button`
-  display: block;
-  color: var(--font-color);
-  background-color: var(--color-primary);
-  font-size: 1.4rem;
-  font-weight: 500;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  margin-bottom: 1rem;
-  &:hover {
-    background-color: var(--color-primary-dark);
-    cursor: pointer;
   }
 `;
