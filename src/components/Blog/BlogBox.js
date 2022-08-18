@@ -7,12 +7,12 @@ export function BlogBox({blog}) {
 
   return (
     <Box>
-      <div className="box__image">
+      <ImageBox className="box__image">
         <BlogTagLine tagName={blog.tag} />
-        <img width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
-      </div>
-      <div className="box__text">
-        <h2>{blog.titleShort}</h2>
+        <Image width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
+      </ImageBox>
+      <TextBox className="box__text">
+        <HeadingSecondary>{blog.titleShort}</HeadingSecondary>
         <Paragraph>
           {blog.lead} {blog.text}
         </Paragraph>
@@ -23,7 +23,7 @@ export function BlogBox({blog}) {
         >
           Mehr dazu ...
         </MoreButton>
-      </div>
+      </TextBox>
     </Box>
   );
 }
@@ -36,31 +36,31 @@ const Box = styled.article`
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 2rem;
+`;
 
-  .box__image {
-    width: 50%;
-    height: 100%;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-  }
+const ImageBox = styled.div`
+  width: 50%;
+  height: 100%;
+`;
+const Image = styled.img`
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+`;
 
-  .box__text {
-    width: 50%;
-    padding: 0 1rem;
-  }
+const TextBox = styled.div`
+  width: 50%;
+  padding: 0 1rem;
+`;
 
-  h2 {
-    font-size: 1.2rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0.5rem 0;
-  }
+const HeadingSecondary = styled.h2`
+  font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem 0;
 `;
 
 const Paragraph = styled.p`

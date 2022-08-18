@@ -13,30 +13,29 @@ export default function Blog() {
     <>
       {blogPost.map(blog => (
         <Container key={blog.id}>
-          <div>
-            <img src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
-            <BackButton />
-            <BlogTag tagName={blog.tag} />
-          </div>
-          <h1>{blog.title}</h1>
-          <p>{blog.lead}</p>
-          <ul>
-            <li className="author">{blog.author}</li>
-            <li className="date">
+          <Image src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
+          <BackButton />
+          <BlogTag tagName={blog.tag} />
+
+          <HeadingPrimary>{blog.title}</HeadingPrimary>
+          <Lead>{blog.lead}</Lead>
+          <List>
+            <AuthorName>{blog.author}</AuthorName>
+            <ArticleDate>
               {blog.date} {blog.dateUpdated}
-            </li>
-          </ul>
-          <div>
-            {blog.text.map(paragraph =>
-              paragraph.includes('##') ? (
-                <h2 key={nanoid()}>{paragraph.substring(2)}</h2>
-              ) : (
-                <p key={nanoid()} className="textbody">
-                  {paragraph}
-                </p>
-              )
-            )}
-          </div>
+            </ArticleDate>
+          </List>
+
+          {blog.text.map(paragraph =>
+            paragraph.includes('##') ? (
+              <HeadingSecondary key={nanoid()}>{paragraph.substring(2)}</HeadingSecondary>
+            ) : (
+              <Text key={nanoid()} className="textbody">
+                {paragraph}
+              </Text>
+            )
+          )}
+
           <BackButton />
         </Container>
       ))}
@@ -47,51 +46,52 @@ export default function Blog() {
 const Container = styled.article`
   padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
+`;
 
-  img {
-    width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+const Image = styled.img`
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+`;
 
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
+const HeadingPrimary = styled.h1`
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+`;
 
-  .lead {
-    line-height: 1.6;
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
+const Lead = styled.p`
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 2rem;
+`;
 
-  ul {
-    list-style: none;
-  }
-  .author {
-    margin-top: 1.5rem;
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
+const List = styled.ul`
+  list-style: none;
+`;
 
-  h2 {
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 0.6rem;
-  }
+const AuthorName = styled.li`
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+`;
 
-  .textbody {
-    line-height: 1.4;
-    font-weight: 400;
-    margin-bottom: 1.6rem;
-  }
+const ArticleDate = styled.li`
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+`;
 
-  .date {
-    font-size: 1.2rem;
-    font-weight: 100;
-    margin-bottom: 2rem;
-  }
+const HeadingSecondary = styled.h2`
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.6rem;
+`;
+
+const Text = styled.p`
+  line-height: 1.4;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
 `;

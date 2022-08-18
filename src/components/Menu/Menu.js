@@ -32,7 +32,6 @@ Menu.propTypes = {
 };
 
 const NavMenu = styled.nav`
-  /* add CSS page animation - transformX - "display: none" doesn't work */
   display: ${({open}) => (open ? 'grid' : 'none')};
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(10, 1fr);

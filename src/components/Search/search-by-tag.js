@@ -17,37 +17,37 @@ export default function SearchByTag() {
   return (
     <>
       <Container>
-        <h1>
-          mehr zum Thema <span>{blogTag}</span> ...
-        </h1>
+        <HeadingPrimary>
+          mehr zum Thema <Span>{blogTag}</Span> ...
+        </HeadingPrimary>
         {blogSearch.map(blog => (
           <ResultBox key={blog.id}>
             <MoreButton>
-              <h2
+              <HeadingSecondary
                 onClick={() => {
                   navigate(`/blog/${blog.slug}`);
                 }}
               >
                 {blog.titleShort}
-              </h2>
-              <p className="tag tag-blog">Blog</p>
+              </HeadingSecondary>
+              <Paragraph className="tag tag-blog">Blog</Paragraph>
             </MoreButton>
-            <p>{blog.lead}</p>
+            <Paragraph>{blog.lead}</Paragraph>
           </ResultBox>
         ))}
         {videoSearch.map(video => (
           <ResultBox key={video.id}>
             <MoreButton>
-              <h2
+              <HeadingSecondary
                 onClick={() => {
                   navigate(`/video/${video.slug}`);
                 }}
               >
                 {video.titleShort}
-              </h2>
-              <p className="tag tag-video">Video</p>
+              </HeadingSecondary>
+              <Paragraph className="tag tag-video">Video</Paragraph>
             </MoreButton>
-            <p>{video.description}</p>
+            <Paragraph>{video.description}</Paragraph>
           </ResultBox>
         ))}
         <BackButton />
@@ -59,59 +59,6 @@ export default function SearchByTag() {
 const Container = styled.section`
   padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
-
-  h1 {
-    font-size: 1.6rem;
-    font-weight: 300;
-    line-height: 1.2;
-    margin: 2rem 0 3rem;
-  }
-
-  span {
-    font-size: 2rem;
-    font-weight: 700;
-    padding-left: 0.3rem;
-    color: var(--color-secondary-light);
-  }
-`;
-
-const ResultBox = styled.article`
-  margin-bottom: 1.25rem;
-
-  h2 {
-    display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 200;
-    line-height: 1.3;
-    margin: 1rem 0 0;
-    color: var(--font-color);
-    text-decoration: underline;
-    text-decoration-color: var(--font-color);
-    text-underline-offset: 0.15rem;
-    margin-right: 1.25rem;
-  }
-
-  h2:hover {
-    text-decoration-color: var(--color-primary);
-  }
-
-  p {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.4;
-    display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
-    -webkit-line-clamp: var(--line-clamp, 2); /* stylelint-disable-line property-no-vendor-prefix */
-    -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
-    word-break: var(--word-break, 'none');
-    overflow: hidden;
-    hyphens: auto;
-    text-align: var(--align, left);
-
-    --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
-    --delay: calc(-1s * (var(--is-single-line, 1) - 1));
-
-    animation: states 1s var(--delay) paused;
-  }
 
   .tag {
     display: inline-block;
@@ -130,6 +77,59 @@ const ResultBox = styled.article`
   .tag-blog {
     background-color: var(--color-primary);
   }
+`;
+
+const HeadingPrimary = styled.h1`
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 2rem 0 3rem;
+`;
+
+const Span = styled.span`
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left: 0.3rem;
+  color: var(--color-secondary-light);
+`;
+
+const ResultBox = styled.article`
+  margin-bottom: 1.25rem;
+`;
+
+const HeadingSecondary = styled.h2`
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 200;
+  line-height: 1.3;
+  margin: 1rem 0 0;
+  color: var(--font-color);
+  text-decoration: underline;
+  text-decoration-color: var(--font-color);
+  text-underline-offset: 0.15rem;
+  margin-right: 1.25rem;
+
+  &:hover {
+    text-decoration-color: var(--color-primary);
+  }
+`;
+
+const Paragraph = styled.p`
+  font-size: 1.4rem;
+  font-weight: 300;
+  line-height: 1.4;
+  display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
+  -webkit-line-clamp: var(--line-clamp, 2); /* stylelint-disable-line property-no-vendor-prefix */
+  -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
+  word-break: var(--word-break, 'none');
+  overflow: hidden;
+  hyphens: auto;
+  text-align: var(--align, left);
+
+  --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
+  --delay: calc(-1s * (var(--is-single-line, 1) - 1));
+
+  animation: states 1s var(--delay) paused;
 `;
 
 const MoreButton = styled.button`

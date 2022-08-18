@@ -3,11 +3,11 @@ import {bool, func} from 'prop-types';
 
 export default function Burger({open, setOpen}) {
   return (
-    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+    <BurgerButton open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />
-    </StyledBurger>
+    </BurgerButton>
   );
 }
 
@@ -16,7 +16,7 @@ Burger.propTypes = {
   setOpen: func.isRequired,
 };
 
-const StyledBurger = styled.button`
+const BurgerButton = styled.button`
   margin-right: 3rem;
   display: flex;
   flex-direction: column;

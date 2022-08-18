@@ -1,13 +1,11 @@
 import styled from 'styled-components/macro';
 import {videoEntries} from './VideoData';
 import {useParams} from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
 import BlogTag from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
 
 export default function Video({style}) {
-  const navigate = useNavigate();
   let {slug} = useParams();
   const videoPost = videoEntries.filter(item => item.slug === slug);
 
@@ -23,8 +21,8 @@ export default function Video({style}) {
             </VideoClip>
             <Description>
               <BlogTag tagName={video.tag} />
-              <h1>{video.titleShort}</h1>
-              <p>{video.description}</p>
+              <HeadingPrimary>{video.titleShort}</HeadingPrimary>
+              <Paragraph>{video.description}</Paragraph>
             </Description>
           </Hero>
           <Section>
@@ -39,21 +37,22 @@ export default function Video({style}) {
 const Container = styled.div`
   padding-bottom: 40rem;
 `;
+
 const Hero = styled.div`
   background-color: var(--color-grey-dark-2);
+`;
 
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 0.8rem;
-  }
+const HeadingPrimary = styled.h1`
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+`;
 
-  p {
-    font-weight: 300;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-  }
+const Paragraph = styled.p`
+  font-weight: 300;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 `;
 
 const Description = styled.article`
