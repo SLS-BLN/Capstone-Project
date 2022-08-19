@@ -6,16 +6,16 @@ export function BlogBox({blog}) {
   const navigate = useNavigate();
 
   return (
-    <Box>
+    <Article>
       <ImageBox className="box__image">
         <BlogTagLine tagName={blog.tag} />
-        <Image width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
+        <BlogImage width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
       </ImageBox>
       <TextBox className="box__text">
-        <HeadingSecondary>{blog.titleShort}</HeadingSecondary>
-        <Paragraph>
+        <Subheading>{blog.titleShort}</Subheading>
+        <Text>
           {blog.lead} {blog.text}
-        </Paragraph>
+        </Text>
         <MoreButton
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
@@ -24,11 +24,11 @@ export function BlogBox({blog}) {
           Mehr dazu ...
         </MoreButton>
       </TextBox>
-    </Box>
+    </Article>
   );
 }
 
-const Box = styled.article`
+const Article = styled.article`
   display: flex;
   justify-content: center;
   background-color: var(--color-grey-dark-1);
@@ -42,7 +42,7 @@ const ImageBox = styled.div`
   width: 50%;
   height: 100%;
 `;
-const Image = styled.img`
+const BlogImage = styled.img`
   max-width: 100%;
   height: auto;
   aspect-ratio: 16/9;
@@ -53,7 +53,7 @@ const TextBox = styled.div`
   padding: 0 1rem;
 `;
 
-const HeadingSecondary = styled.h2`
+const Subheading = styled.h2`
   font-size: 1.2rem;
   line-height: 1.1;
   margin-bottom: 0.5rem;
@@ -63,7 +63,7 @@ const HeadingSecondary = styled.h2`
   padding: 0.5rem 0;
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-size: 1.2rem;
   line-height: 1.2;
   display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */

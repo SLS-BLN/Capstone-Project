@@ -18,11 +18,11 @@ export default function VideoMain() {
         </VideoClip>
         <Description>
           <BlogTag tagName={video.tag} />
-          <HeadingPrimary>{video.titleShort}</HeadingPrimary>
-          <Paragraph>{video.description}</Paragraph>
+          <Title>{video.titleShort}</Title>
+          <Text>{video.description}</Text>
         </Description>
       </Hero>
-      <HeadingSecondary>Beliebt</HeadingSecondary>
+      <Subheading>Beliebt</Subheading>
       <VideoContainer>
         <List>
           {/* sort by likes later on */}
@@ -47,7 +47,7 @@ export default function VideoMain() {
           ))}
         </List>
       </VideoContainer>
-      <HeadingSecondary>Neu</HeadingSecondary>
+      <Subheading>Neu</Subheading>
       <VideoContainer>
         <List>
           {/* sort by date later on */}
@@ -93,20 +93,20 @@ const Description = styled.article`
   margin-bottom: 6rem;
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 0.8rem;
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-weight: 300;
   margin-bottom: 1rem;
   line-height: 1.2;
 `;
 
-const HeadingSecondary = styled.h2`
+const Subheading = styled.h2`
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 500;

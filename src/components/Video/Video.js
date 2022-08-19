@@ -20,8 +20,8 @@ export default function Video({style}) {
           </VideoClip>
           <Description>
             <BlogTag tagName={video.tag} />
-            <HeadingPrimary>{video.titleShort}</HeadingPrimary>
-            <Paragraph>{video.description}</Paragraph>
+            <Title>{video.titleShort}</Title>
+            <Text>{video.description}</Text>
             <BackButton />
           </Description>
         </Container>
@@ -34,14 +34,14 @@ const Container = styled.div`
   padding-bottom: 40rem;
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 0.8rem;
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-weight: 300;
   line-height: 1.2;
   margin-bottom: 3rem;

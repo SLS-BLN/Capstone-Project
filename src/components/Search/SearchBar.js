@@ -13,19 +13,19 @@ export default function SearchBar({onSearchTermChange}) {
   };
 
   return (
-    <SearchBarContainer type="submit" onSubmit={handleSubmit}>
-      <SearchBarInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
-    </SearchBarContainer>
+    <SearchForm type="submit" onSubmit={handleSubmit}>
+      <SearchInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
+    </SearchForm>
   );
 }
 
-const SearchBarContainer = styled.form`
+const SearchForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 3.5rem;
 `;
-const SearchBarInput = styled.input`
+const SearchInput = styled.input`
   font-size: 1.6rem;
   font-weight: 200;
   padding: 1rem 3.5rem;

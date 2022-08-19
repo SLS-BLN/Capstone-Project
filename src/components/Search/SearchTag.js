@@ -16,47 +16,47 @@ export default function SearchByTag() {
 
   return (
     <>
-      <Container>
-        <HeadingPrimary>
+      <Section>
+        <Title>
           mehr zum Thema <Span>{blogTag}</Span> ...
-        </HeadingPrimary>
+        </Title>
         {blogSearch.map(blog => (
           <ResultBox key={blog.id}>
             <MoreButton>
-              <HeadingSecondary
+              <Subheading
                 onClick={() => {
                   navigate(`/blog/${blog.slug}`);
                 }}
               >
                 {blog.titleShort}
-              </HeadingSecondary>
-              <Paragraph className="tag tag-blog">Blog</Paragraph>
+              </Subheading>
+              <Text className="tag tag-blog">Blog</Text>
             </MoreButton>
-            <Paragraph>{blog.lead}</Paragraph>
+            <Text>{blog.lead}</Text>
           </ResultBox>
         ))}
         {videoSearch.map(video => (
           <ResultBox key={video.id}>
             <MoreButton>
-              <HeadingSecondary
+              <Subheading
                 onClick={() => {
                   navigate(`/video/${video.slug}`);
                 }}
               >
                 {video.titleShort}
-              </HeadingSecondary>
-              <Paragraph className="tag tag-video">Video</Paragraph>
+              </Subheading>
+              <Text className="tag tag-video">Video</Text>
             </MoreButton>
-            <Paragraph>{video.description}</Paragraph>
+            <Text>{video.description}</Text>
           </ResultBox>
         ))}
         <BackButton />
-      </Container>
+      </Section>
     </>
   );
 }
 
-const Container = styled.section`
+const Section = styled.section`
   padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
 
@@ -79,7 +79,7 @@ const Container = styled.section`
   }
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.2;
@@ -97,7 +97,7 @@ const ResultBox = styled.article`
   margin-bottom: 1.25rem;
 `;
 
-const HeadingSecondary = styled.h2`
+const Subheading = styled.h2`
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 200;
@@ -114,7 +114,7 @@ const HeadingSecondary = styled.h2`
   }
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-size: 1.4rem;
   font-weight: 300;
   line-height: 1.4;

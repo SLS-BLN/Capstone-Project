@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <>
       <Teaser key={blog.id}>
-        <Image src={blog.imgUrl} alt={blog.imgAlt} width={300} />
+        <TeaserImage src={blog.imgUrl} alt={blog.imgAlt} width={300} />
         <BlogTag tagName={blog.tag} />
-        <HeadingPrimary>{blog.title}</HeadingPrimary>
-        <Paragraph>
+        <Title>{blog.title}</Title>
+        <Text>
           {blog.lead} {blog.text.at(0)}
-        </Paragraph>
+        </Text>
         <MoreButton
           role="navigation"
           aria-label="Blog Post"
@@ -47,19 +47,19 @@ const Teaser = styled.article`
   background-position: left 26rem top 5rem;
 `;
 
-const Image = styled.img`
+const TeaserImage = styled.img`
   width: 100%;
   margin: 2rem 0;
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 1rem;
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-weight: 400;
   margin-bottom: 1rem;
 `;

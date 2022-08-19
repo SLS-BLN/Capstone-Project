@@ -12,13 +12,13 @@ export default function Cta() {
         </div>
       </VideoClip>
       <Textbox>
-        <HeadingPrimary>
+        <Title>
           Deine Filme <span>selber machen</span>
-        </HeadingPrimary>
-        <Paragraph>
+        </Title>
+        <Text>
           Mit dem Smartphone drehen kann jeder. Macht es dann noch Sinn, tausende Euros für eine Videoproduktion
           auszugeben? Lässt sich das nicht in house erledigen?
-        </Paragraph>
+        </Text>
         <CtaButton
           onClick={() => {
             navigate('/');
@@ -26,7 +26,7 @@ export default function Cta() {
         >
           Mehr dazu
         </CtaButton>
-        <Image src="https://res.cloudinary.com/dq2vrujou/image/upload/v1660468307/Food_dkv0qh.png"></Image>
+        <CtaImage src="https://res.cloudinary.com/dq2vrujou/image/upload/v1660468307/Food_dkv0qh.png"></CtaImage>
       </Textbox>
     </Section>
   );
@@ -79,14 +79,14 @@ const Textbox = styled.article`
   margin: 0 3rem;
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 3rem;
   line-height: 1.1;
   text-align: center;
   margin-bottom: 1.5rem;
 `;
 
-const Paragraph = styled.p`
+const Text = styled.p`
   font-size: 1.6rem;
   text-align: center;
   margin-bottom: 3rem;
@@ -102,7 +102,7 @@ const CtaButton = styled.button`
   margin-bottom: 4rem;
 `;
 
-const Image = styled.img`
+const CtaImage = styled.img`
   width: 100%;
   height: auto;
   margin-bottom: 4rem;

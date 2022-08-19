@@ -22,7 +22,7 @@ export default function Search() {
   return (
     <>
       <FormSearch>
-        <HeadingPrimary>Lust auf mehr?</HeadingPrimary>
+        <Title>Lust auf mehr?</Title>
         <SearchBar onSearchTermChange={setSearchTerm} />
         {numberOfResults === 0 && <NoResult>Die Suche ergab leider kein Ergebnis</NoResult>}
         {searchTermLength > 2 &&
@@ -80,7 +80,7 @@ const FormSearch = styled.section`
   background-color: var(--color-grey-dark-2);
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 3rem;
   text-align: center;
   margin: 2.5rem 0;

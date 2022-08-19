@@ -12,12 +12,12 @@ export default function Blog() {
   return (
     <>
       {blogPost.map(blog => (
-        <Container key={blog.id}>
-          <Image src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
+        <Article key={blog.id}>
+          <BlogImage src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
           <BackButton />
           <BlogTag tagName={blog.tag} />
 
-          <HeadingPrimary>{blog.title}</HeadingPrimary>
+          <Title>{blog.title}</Title>
           <Lead>{blog.lead}</Lead>
           <List>
             <AuthorName>{blog.author}</AuthorName>
@@ -28,7 +28,7 @@ export default function Blog() {
 
           {blog.text.map(paragraph =>
             paragraph.includes('##') ? (
-              <HeadingSecondary key={nanoid()}>{paragraph.substring(2)}</HeadingSecondary>
+              <Subheading key={nanoid()}>{paragraph.substring(2)}</Subheading>
             ) : (
               <Text key={nanoid()} className="textbody">
                 {paragraph}
@@ -37,24 +37,24 @@ export default function Blog() {
           )}
 
           <BackButton />
-        </Container>
+        </Article>
       ))}
     </>
   );
 }
 
-const Container = styled.article`
+const Article = styled.article`
   padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
 `;
 
-const Image = styled.img`
+const BlogImage = styled.img`
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
 `;
 
-const HeadingPrimary = styled.h1`
+const Title = styled.h1`
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 1.2;
@@ -83,7 +83,7 @@ const ArticleDate = styled.li`
   margin-bottom: 2rem;
 `;
 
-const HeadingSecondary = styled.h2`
+const Subheading = styled.h2`
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1.2;
