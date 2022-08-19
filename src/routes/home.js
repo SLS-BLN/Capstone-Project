@@ -13,12 +13,12 @@ export default function Home(style) {
   return (
     <>
       <Container key={blog.id} style={style}>
-        <img src={blog.imgUrl} alt={blog.imgAlt} width={300} />
+        <Image src={blog.imgUrl} alt={blog.imgAlt} width={300} />
         <BlogTag tagName={blog.tag} />
-        <h1>{blog.title}</h1>
-        <p>
+        <HeadingPrimary>{blog.title}</HeadingPrimary>
+        <Paragraph>
           {blog.lead} {blog.text.at(0)}
-        </p>
+        </Paragraph>
         <MoreButton
           role="navigation"
           aria-label="Blog Post"
@@ -46,23 +46,23 @@ const Container = styled.article`
   background-image: url("data:image/svg+xml,%3Csvg width='529' height='502' viewBox='0 0 529 502' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M529 251C529 389.623 410.579 502 264.5 502C118.421 502 0 389.623 0 251C0 112.377 118.421 0 264.5 0C410.579 0 529 112.377 529 251Z' fill='%234FB5DC' fill-opacity='0.22'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left 26rem top 5rem;
+`;
 
-  img {
-    width: 100%;
-    margin: 2rem 0;
-  }
+const Image = styled.img`
+  width: 100%;
+  margin: 2rem 0;
+`;
 
-  h1 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
+const HeadingPrimary = styled.h1`
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+`;
 
-  p {
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
+const Paragraph = styled.p`
+  font-weight: 400;
+  margin-bottom: 1rem;
 `;
 
 const MoreButton = styled.button`

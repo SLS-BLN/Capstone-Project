@@ -10,7 +10,7 @@ import Menu from './components/Menu/Menu';
 import SearchByTag from './components/Search/search-by-tag';
 import Video from './components/Video/Video';
 
-import BlogMain from './routes/blogpage';
+import BlogMain from './routes/blog';
 import Cta from './routes/cta';
 import Home from './routes/home';
 import Error from './routes/error';

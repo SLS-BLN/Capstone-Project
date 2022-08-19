@@ -13,21 +13,17 @@ export default function Video({style}) {
     <>
       {videoPost.map(video => (
         <Container key={video.id} style={style}>
-          <Hero>
-            <VideoClip>
-              <div style={{'--aspect-ratio': '16 / 9'}}>
-                <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
-              </div>
-            </VideoClip>
-            <Description>
-              <BlogTag tagName={video.tag} />
-              <HeadingPrimary>{video.titleShort}</HeadingPrimary>
-              <Paragraph>{video.description}</Paragraph>
-            </Description>
-          </Hero>
-          <Section>
+          <VideoClip>
+            <div style={{'--aspect-ratio': '16 / 9'}}>
+              <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
+            </div>
+          </VideoClip>
+          <Description>
+            <BlogTag tagName={video.tag} />
+            <HeadingPrimary>{video.titleShort}</HeadingPrimary>
+            <Paragraph>{video.description}</Paragraph>
             <BackButton />
-          </Section>
+          </Description>
         </Container>
       ))}
     </>
@@ -36,10 +32,6 @@ export default function Video({style}) {
 
 const Container = styled.div`
   padding-bottom: 40rem;
-`;
-
-const Hero = styled.div`
-  background-color: var(--color-grey-dark-2);
 `;
 
 const HeadingPrimary = styled.h1`
@@ -51,8 +43,8 @@ const HeadingPrimary = styled.h1`
 
 const Paragraph = styled.p`
   font-weight: 300;
-  margin-bottom: 1rem;
   line-height: 1.2;
+  margin-bottom: 3rem;
 `;
 
 const Description = styled.article`
@@ -85,8 +77,4 @@ const VideoClip = styled.section`
       height: 100%;
     }
   }
-`;
-
-const Section = styled.div`
-  margin: 0 3rem 5rem;
 `;
