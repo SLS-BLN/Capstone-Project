@@ -134,6 +134,7 @@ const HeadingTertiary = styled.h3`
 const List = styled.ul`
   list-style: none;
   display: flex;
+
   /* math calculation would be better */
   width: 267.5rem;
 `;
