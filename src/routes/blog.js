@@ -1,6 +1,6 @@
-import {BlogBox} from '../components/Blog/BlogBox';
-import {blogEntries} from '../components/Blog/BlogData';
 import styled from 'styled-components/macro';
+import {blogEntries} from '../components/Blog/BlogData';
+import {BlogBox} from '../components/Blog/BlogBox';
 
 export default function BlogMain() {
   return (

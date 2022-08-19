@@ -1,24 +1,21 @@
 import styled from 'styled-components/macro';
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {blogEntries} from '../components/Blog/BlogData';
 import {videoEntries} from '../components/Video/VideoData';
 import BlogTag from '../components/Blogtag/BlogTag';
 import SearchBar from '../components/Search/SearchBar';
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
 
 export default function Search() {
   const navigate = useNavigate();
   const allTags = Array.from(new Set([...blogEntries, ...videoEntries].map(entry => entry.tag))).sort();
   const [searchTerm, setSearchTerm] = useState('');
-  // const [isActive, setIsActive] = useState(0);
-
   const displayBlogs = blogEntries.filter(item => {
     return item.text.join().toLowerCase().includes(searchTerm.toLowerCase());
   });
   const displayVideos = videoEntries.filter(item => {
     return item.description.toLowerCase().includes(searchTerm.toLowerCase());
   });
-
   const numberOfResults = displayVideos.length + displayBlogs.length;
   const searchTermLength = searchTerm.length;
 

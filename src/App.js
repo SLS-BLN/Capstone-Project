@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react';
 import Blog from './components/Blog/Blog';
 import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
-import SearchByTag from './components/Search/search-by-tag';
+import SearchByTag from './components/Search/SearchTag';
 import Video from './components/Video/Video';
 
 import BlogMain from './routes/blog';
