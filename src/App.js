@@ -55,14 +55,6 @@ export default function App() {
         <Route path="*" element={<Error />} />
         <Route path="cta" element={<Cta />} />
       </Routes>
-      <nav role="navigation" aria-label="main navigation">
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/cta">Call to action</Link>
-        <Link to="/error">Fehler</Link>
-        <Link to="/video">Video</Link>
-        <Link to="/search">Suche</Link>
-      </nav>
       <Outlet />
     </Wrapper>
   );
