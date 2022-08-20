@@ -33,6 +33,8 @@ export default function App() {
     <Wrapper>
       <Header>
         <HomeButton
+          aria-label="navigate to home"
+          role="navigation"
           onClick={() => {
             navigate('/');
           }}

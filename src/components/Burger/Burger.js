@@ -3,7 +3,12 @@ import {bool, func} from 'prop-types';
 
 export default function Burger({open, setOpen}) {
   return (
-    <Button open={open} onClick={() => setOpen(!open)}>
+    <Button
+      aria-label={open ? 'close navigation menu' : 'open navigation menu'}
+      role="navigation"
+      open={open}
+      onClick={() => setOpen(!open)}
+    >
       <div />
       <div />
       <div />

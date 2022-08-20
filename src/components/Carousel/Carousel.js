@@ -18,7 +18,7 @@ export default function BlogCarousel() {
 
   return (
     <Carousel>
-      <Button className="btn btn--left" onClick={prevSlide}>
+      <Button aria-label="last slide" className="btn btn--left" onClick={prevSlide}>
         <FaChevronLeft />
       </Button>
       {/* use date(newest to oldest) instead of index */}
@@ -33,7 +33,7 @@ export default function BlogCarousel() {
           return '';
         }
       })}
-      <Button className="btn btn--right" onClick={nextSlide}>
+      <Button aria-label="next slide" className="btn btn--right" onClick={nextSlide}>
         <FaChevronRight />
       </Button>
     </Carousel>
