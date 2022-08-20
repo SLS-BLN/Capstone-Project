@@ -30,7 +30,7 @@ export default function Home() {
         </MoreButton>
       </Teaser>
       <Carousel />
-      <Video className="grid">
+      <Video>
         <div style={{'--aspect-ratio': '16 / 9'}}>
           <ReactPlayer url="https://vimeo.com/737176389" width="640" height="480" controls={true} playsinline />
         </div>
@@ -81,12 +81,6 @@ const MoreButton = styled.button`
 const Video = styled.section`
   margin-top: 3rem;
   padding-bottom: 4rem;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.1rem;
-  }
 
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;

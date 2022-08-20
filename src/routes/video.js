@@ -23,13 +23,13 @@ export default function VideoMain() {
         </Description>
       </Hero>
       <Subheading>Beliebt</Subheading>
-      <VideoContainer>
-        <List>
+      <ScrollContainer>
+        <VideoList>
           {/* sort by likes later on */}
           {videoEntries.map((video, index) => (
-            <ListItem key={index}>
-              <HeadingTertiary>{video.titleShort}</HeadingTertiary>
-              <VideoClip className="grid">
+            <Video key={index}>
+              <VideoTitle>{video.titleShort}</VideoTitle>
+              <VideoClip>
                 <div style={{'--aspect-ratio': '16 / 9'}}>
                   <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
                 </div>
@@ -43,18 +43,18 @@ export default function VideoMain() {
                   Mehr dazu ...
                 </MoreButtonPlain>
               </VideoClip>
-            </ListItem>
+            </Video>
           ))}
-        </List>
-      </VideoContainer>
+        </VideoList>
+      </ScrollContainer>
       <Subheading>Neu</Subheading>
-      <VideoContainer>
-        <List>
+      <ScrollContainer>
+        <VideoList>
           {/* sort by date later on */}
           {videoEntries.map((video, index) => (
-            <ListItem key={index}>
-              <HeadingTertiary>{video.titleShort}</HeadingTertiary>
-              <VideoClip className="grid">
+            <Video key={index}>
+              <VideoTitle>{video.titleShort}</VideoTitle>
+              <VideoClip>
                 <div style={{'--aspect-ratio': '16 / 9'}}>
                   <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
                 </div>
@@ -68,10 +68,10 @@ export default function VideoMain() {
                   Mehr dazu ...
                 </MoreButtonPlain>
               </VideoClip>
-            </ListItem>
+            </Video>
           ))}
-        </List>
-      </VideoContainer>
+        </VideoList>
+      </ScrollContainer>
     </Container>
   );
 }
@@ -118,20 +118,20 @@ const Subheading = styled.h2`
   margin-left: 0.1rem;
 `;
 
-const VideoContainer = styled.section`
+const ScrollContainer = styled.section`
   margin: 0;
   margin-bottom: 4rem;
   margin-left: 0.7rem;
   overflow-x: scroll;
 `;
 
-const HeadingTertiary = styled.h3`
+const VideoTitle = styled.h3`
   padding: 0.35rem 0;
   font-size: 1.6rem;
   font-weight: 300;
 `;
 
-const List = styled.ul`
+const VideoList = styled.ul`
   list-style: none;
   display: flex;
 
@@ -139,11 +139,10 @@ const List = styled.ul`
   width: 267.5rem;
 `;
 
-const ListItem = styled.li`
+const Video = styled.li`
   /* math calculation would be better */
   height: 21rem;
   width: 26.66rem;
-  background-color: var(--color-grey-dark-2);
   padding: 0 0.5rem;
 `;
 
@@ -163,12 +162,6 @@ const MoreButtonPlain = styled.button`
 
 const VideoClip = styled.section`
   margin-bottom: 2rem;
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 0.1rem;
-  }
 
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;
