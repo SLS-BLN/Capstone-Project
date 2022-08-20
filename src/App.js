@@ -55,13 +55,13 @@ export default function App() {
         <Route path="*" element={<Error />} />
         <Route path="cta" element={<Cta />} />
       </Routes>
-      <nav>
-        <Link to="/"></Link>
-        <Link to="/blog"></Link>
-        <Link to="/cta"></Link>
-        <Link to="/error"></Link>
-        <Link to="/video"></Link>
-        <Link to="/search"></Link>
+      <nav role="navigation" aria-label="main navigation">
+        <Link to="/">Home</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/cta">Call to action</Link>
+        <Link to="/error">Fehler</Link>
+        <Link to="/video">Video</Link>
+        <Link to="/search">Suche</Link>
       </nav>
       <Outlet />
     </Wrapper>
