@@ -4,11 +4,15 @@ import {useNavigate} from 'react-router-dom';
 import {blogEntries} from '../components/Blog/BlogData';
 import BlogTag from '../components/Blogtag/BlogTag';
 import Carousel from '../components/Carousel/Carousel';
+import MoreButton from '../components/Buttons/MoreButton';
 
 export default function Home() {
   // hard coded at the moment - should be dynamic (newest date)
   const blog = blogEntries.at(-1);
   const navigate = useNavigate();
+  const goToBlog = () => {
+    navigate(`/blog/${blog.slug}`);
+  };
 
   return (
     <>
@@ -19,15 +23,7 @@ export default function Home() {
         <Text>
           {blog.lead} {blog.text.at(0)}
         </Text>
-        <MoreButton
-          role="navigation"
-          aria-label="Blog Post"
-          onClick={() => {
-            navigate(`/blog/${blog.slug}`);
-          }}
-        >
-          Mehr dazu ...
-        </MoreButton>
+        <MoreButton goToBlog={goToBlog} />
       </Teaser>
       <Carousel />
       <Video>
@@ -62,20 +58,6 @@ const Title = styled.h1`
 const Text = styled.p`
   font-weight: 400;
   margin-bottom: 1rem;
-`;
-
-const MoreButton = styled.button`
-  color: var(--font-color);
-  background-color: var(--color-primary);
-  font-size: 1.4rem;
-  font-weight: 500;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--radius);
-  &:hover {
-    background-color: var(--color-primary-dark);
-    cursor: pointer;
-  }
 `;
 
 const Video = styled.section`

@@ -22,7 +22,7 @@ export default function SearchByTag() {
         </Title>
         {blogSearch.map(blog => (
           <ResultBox key={blog.id}>
-            <MoreButton>
+            <Button>
               <Subheading
                 onClick={() => {
                   navigate(`/blog/${blog.slug}`);
@@ -30,14 +30,14 @@ export default function SearchByTag() {
               >
                 {blog.titleShort}
               </Subheading>
-              <Text className="tag tag-blog">Blog</Text>
-            </MoreButton>
+              <Tag className="tag tag-blog">Blog</Tag>
+            </Button>
             <Text>{blog.lead}</Text>
           </ResultBox>
         ))}
         {videoSearch.map(video => (
           <ResultBox key={video.id}>
-            <MoreButton>
+            <Button>
               <Subheading
                 onClick={() => {
                   navigate(`/video/${video.slug}`);
@@ -45,8 +45,8 @@ export default function SearchByTag() {
               >
                 {video.titleShort}
               </Subheading>
-              <Text className="tag tag-video">Video</Text>
-            </MoreButton>
+              <Tag className="tag tag-video">Video</Tag>
+            </Button>
             <Text>{video.description}</Text>
           </ResultBox>
         ))}
@@ -59,24 +59,6 @@ export default function SearchByTag() {
 const Section = styled.section`
   padding: 0 3rem 10rem;
   background-color: var(--color-grey-dark-2);
-
-  .tag {
-    display: inline-block;
-    color: var(--font-color);
-    font-size: 1.2rem;
-    font-weight: 500;
-    border: none;
-    padding: 0.1rem 0.5rem;
-    border-radius: var(--radius);
-  }
-
-  .tag-video {
-    background-color: var(--color-secondary-dark);
-  }
-
-  .tag-blog {
-    background-color: var(--color-primary);
-  }
 `;
 
 const Title = styled.h1`
@@ -110,7 +92,26 @@ const Subheading = styled.h2`
   margin-right: 1.25rem;
 
   &:hover {
-    text-decoration-color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: none;
+  }
+`;
+
+const Tag = styled.p`
+  display: inline-block;
+  color: var(--font-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--radius);
+
+  &.tag-video {
+    background-color: var(--color-secondary-dark);
+  }
+
+  &.tag-blog {
+    background-color: var(--color-primary);
   }
 `;
 
@@ -132,7 +133,7 @@ const Text = styled.p`
   animation: states 1s var(--delay) paused;
 `;
 
-const MoreButton = styled.button`
+const Button = styled.button`
   color: var(--font-color);
   background-color: var(--color-grey-dark-2);
   font-size: 1.4rem;
