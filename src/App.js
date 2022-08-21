@@ -1,4 +1,4 @@
-import {Link, Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import {ReactComponent as Logo} from './icons/logo.svg';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import styled from 'styled-components/macro';
