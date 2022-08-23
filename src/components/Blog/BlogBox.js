@@ -9,7 +9,7 @@ export function BlogBox({blog}) {
     <Article>
       <ImageBox className="box__image">
         <BlogTagLine tagName={blog.tag} />
-        <BlogImage width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
+        <BlogImage width={560} height={316} src={blog.imgUrlSquare} alt={blog.imgAlt} />
       </ImageBox>
       <TextBox className="box__text">
         <Subheading>{blog.titleShort}</Subheading>

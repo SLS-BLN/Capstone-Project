@@ -50,6 +50,7 @@ const Article = styled.article`
 
 const BlogImage = styled.img`
   width: 100%;
+  height: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
 `;
