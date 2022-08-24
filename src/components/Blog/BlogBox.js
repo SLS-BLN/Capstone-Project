@@ -45,6 +45,7 @@ const ImageBox = styled.div`
 const BlogImage = styled.img`
   max-width: 100%;
   height: auto;
+  object-fit: cover;
   aspect-ratio: 16/9;
 `;
 
