@@ -4,6 +4,12 @@ import {useNavigate} from 'react-router-dom';
 import {videoEntries} from '../components/Video/VideoData';
 import BlogTag from '../components/Blogtag/BlogTag';
 
+// define width of single video in scrollbar
+const videoItemWidth = '26.75rem';
+
+// calculate width of all videos in scrollbar
+const scrollWidth = videoEntries.length * videoItemWidth.slice(0, 4) + 'rem';
+
 export default function VideoMain() {
   const video = videoEntries.at(-1);
   const navigate = useNavigate();
@@ -23,15 +29,15 @@ export default function VideoMain() {
         </Description>
       </Hero>
       <Subheading>Beliebt</Subheading>
-      <ScrollContainer>
+      <ScrollContainer className="scrolltrack">
         <VideoList>
           {/* sort by likes later on */}
           {videoEntries.map((video, index) => (
-            <Video key={index}>
+            <VideoItem key={index}>
               <VideoTitle>{video.titleShort}</VideoTitle>
               <VideoClip>
                 <div style={{'--aspect-ratio': '16 / 9'}}>
-                  <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
+                  <ReactPlayer url={video.videoUrl} width="640" height="360" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
                   role="navigation"
@@ -43,7 +49,7 @@ export default function VideoMain() {
                   Mehr dazu ...
                 </MoreButtonPlain>
               </VideoClip>
-            </Video>
+            </VideoItem>
           ))}
         </VideoList>
       </ScrollContainer>
@@ -52,11 +58,11 @@ export default function VideoMain() {
         <VideoList>
           {/* sort by date later on */}
           {videoEntries.map((video, index) => (
-            <Video key={index}>
+            <VideoItem key={index}>
               <VideoTitle>{video.titleShort}</VideoTitle>
               <VideoClip>
                 <div style={{'--aspect-ratio': '16 / 9'}}>
-                  <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
+                  <ReactPlayer url={video.videoUrl} width="640" height="360" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
                   role="navigation"
@@ -68,7 +74,7 @@ export default function VideoMain() {
                   Mehr dazu ...
                 </MoreButtonPlain>
               </VideoClip>
-            </Video>
+            </VideoItem>
           ))}
         </VideoList>
       </ScrollContainer>
@@ -119,9 +125,7 @@ const Subheading = styled.h2`
 `;
 
 const ScrollContainer = styled.section`
-  margin: 0;
-  margin-bottom: 4rem;
-  margin-left: 0.7rem;
+  margin: 0 0.7rem 4rem;
   overflow-x: scroll;
 `;
 
@@ -134,15 +138,12 @@ const VideoTitle = styled.h3`
 const VideoList = styled.ul`
   list-style: none;
   display: flex;
-
-  /* math calculation would be better */
-  width: 267.5rem;
+  width: ${scrollWidth};
 `;
 
-const Video = styled.li`
-  /* math calculation would be better */
-  height: 21rem;
-  width: 26.66rem;
+const VideoItem = styled.li`
+  height: auto;
+  width: ${videoItemWidth};
   padding: 0 0.5rem;
 `;
 
