@@ -27,9 +27,9 @@ export default function Home() {
       </Teaser>
       <Carousel />
       <Video>
-        <div style={{'--aspect-ratio': '16 / 9'}}>
+        <Container style={{'--aspect-ratio': '16 / 9'}}>
           <ReactPlayer url="https://vimeo.com/737176389" width="640" height="480" controls={true} playsinline />
-        </div>
+        </Container>
       </Video>
     </>
   );
@@ -63,20 +63,21 @@ const Text = styled.p`
 const Video = styled.section`
   margin-top: 3rem;
   padding-bottom: 4rem;
+`;
 
-  [style*='--aspect-ratio'] > :first-child {
+const Container = styled.div`
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  & > :first-child {
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-  }
-  [style*='--aspect-ratio'] {
-    position: relative;
-  }
-  [style*='--aspect-ratio']::before {
-    content: '';
-    display: block;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
 `;
