@@ -7,11 +7,11 @@ export function BlogBox({blog}) {
 
   return (
     <Article>
-      <ImageBox className="box__image">
+      <ImageBox>
         <BlogTagLine tagName={blog.tag} />
         <BlogImage width={560} height={316} src={blog.imgUrlSquare} alt={blog.imgAlt} />
       </ImageBox>
-      <TextBox className="box__text">
+      <TextBox>
         <Subheading>{blog.titleShort}</Subheading>
         <Text>
           {blog.lead} {blog.text}
@@ -40,7 +40,6 @@ const Article = styled.article`
 
 const ImageBox = styled.div`
   width: 50%;
-  height: 100%;
 `;
 const BlogImage = styled.img`
   max-width: 100%;

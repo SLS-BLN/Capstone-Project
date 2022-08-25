@@ -30,7 +30,7 @@ export default function SearchByTag() {
               >
                 {blog.titleShort}
               </Subheading>
-              <Tag className="tag tag-blog">Blog</Tag>
+              <Tag className="tag-blog">Blog</Tag>
             </Button>
             <Text>{blog.lead}</Text>
           </ResultBox>
@@ -45,7 +45,7 @@ export default function SearchByTag() {
               >
                 {video.titleShort}
               </Subheading>
-              <Tag className="tag tag-video">Video</Tag>
+              <Tag className="tag-video">Video</Tag>
             </Button>
             <Text>{video.description}</Text>
           </ResultBox>

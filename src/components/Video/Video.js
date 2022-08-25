@@ -5,14 +5,14 @@ import ReactPlayer from 'react-player/vimeo';
 import BlogTag from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
 
-export default function Video({style}) {
+export default function Video() {
   let {slug} = useParams();
   const videoPost = videoEntries.filter(item => item.slug === slug);
 
   return (
     <>
       {videoPost.map(video => (
-        <Container key={video.id} style={style}>
+        <Container key={video.id}>
           <VideoClip>
             <div style={{'--aspect-ratio': '16 / 9'}}>
               <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />

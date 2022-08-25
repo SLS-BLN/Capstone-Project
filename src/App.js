@@ -2,7 +2,7 @@ import {Outlet} from 'react-router-dom';
 import {ReactComponent as Logo} from './icons/logo.svg';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import styled from 'styled-components/macro';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 import Blog from './components/Blog/Blog';
 import Burger from './components/Burger/Burger';
@@ -21,14 +21,6 @@ export default function App() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [open]);
-
   return (
     <Wrapper>
       <Header>
@@ -41,9 +33,9 @@ export default function App() {
         >
           <Logo />
         </HomeButton>
-        <Burger open={open} setOpen={setOpen} />
+        <Burger aria-label="open navigation menu" role="navigation" open={open} setOpen={setOpen} />
       </Header>
-      <Menu open={open} setOpen={open} />
+      <Menu aria-label="menu" role="navigation" open={open} setOpen={open} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="blog" element={<BlogMain />} />

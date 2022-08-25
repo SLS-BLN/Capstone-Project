@@ -17,7 +17,7 @@ export default function VideoMain() {
   return (
     <Container>
       <Hero key={video.id}>
-        <VideoClip className="grid">
+        <VideoClip>
           <div style={{'--aspect-ratio': '16 / 9'}}>
             <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
           </div>
@@ -29,7 +29,7 @@ export default function VideoMain() {
         </Description>
       </Hero>
       <Subheading>Beliebt</Subheading>
-      <ScrollContainer className="scrolltrack">
+      <ScrollContainer>
         <VideoList>
           {/* sort by likes later on */}
           {videoEntries.map((video, index) => (
