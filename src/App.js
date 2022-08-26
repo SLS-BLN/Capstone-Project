@@ -39,9 +39,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="blog" element={<BlogMain />} />
-        <Route path="blog/:slug" element={<Blog slug={'slug'} />} />
+        <Route path="blog/:slug" element={<Blog />} />
         <Route path="video" element={<VideoMain />} />
-        <Route path="video/:slug" element={<Video slug={'slug'} />} />
+        <Route path="video/:slug" element={<Video />} />
         <Route path="search" element={<Search />} />
         <Route path="search/:tagName" element={<SearchByTag tagName={'tagName'} />} />
         <Route path="*" element={<Error />} />
