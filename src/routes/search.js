@@ -16,6 +16,7 @@ export default function Search() {
   const displayVideos = videoEntries.filter(item => {
     return item.description.toLowerCase().includes(searchTerm.toLowerCase());
   });
+
   const numberOfResults = displayVideos.length + displayBlogs.length;
   const searchTermLength = searchTerm.length;
 
@@ -157,15 +158,9 @@ const Text = styled.p`
   font-weight: 300;
   line-height: 1.4;
   display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
-  -webkit-line-clamp: var(--line-clamp, 2); /* stylelint-disable-line property-no-vendor-prefix */
+  -webkit-line-clamp: 2; /* stylelint-disable-line property-no-vendor-prefix */
   -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
-  word-break: var(--word-break, 'none');
   overflow: hidden;
   hyphens: auto;
-  text-align: var(--align, left);
-
-  --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
-  --delay: calc(-1s * (var(--is-single-line, 1) - 1));
-
-  animation: states 1s var(--delay) paused;
+  text-align: left;
 `;
