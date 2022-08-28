@@ -5,7 +5,8 @@ export default function Burger({open, setOpen}) {
   return (
     <Button
       aria-label={open ? 'close navigation menu' : 'open navigation menu'}
-      role="navigation"
+      role="button"
+      aria-expanded="false"
       open={open}
       onClick={() => setOpen(!open)}
     >

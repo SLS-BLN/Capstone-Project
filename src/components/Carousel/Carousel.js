@@ -28,7 +28,7 @@ export default function BlogCarousel() {
             </div>
           );
         } else {
-          return '';
+          return null;
         }
       })}
       <ButtonNextSlide nextSlide={nextSlide} />
