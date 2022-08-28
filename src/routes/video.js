@@ -40,13 +40,12 @@ export default function VideoMain() {
                   <ReactPlayer url={video.videoUrl} width="640" height="360" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
-                  role="navigation"
-                  aria-label="Video Clip"
+                  role="button"
                   onClick={() => {
                     navigate(`/video/${video.slug}`);
                   }}
                 >
-                  Mehr dazu ...
+                  mehr Infos zum Video
                 </MoreButtonPlain>
               </VideoClip>
             </VideoItem>
@@ -65,13 +64,12 @@ export default function VideoMain() {
                   <ReactPlayer url={video.videoUrl} width="640" height="360" controls={true} playsinline />
                 </div>
                 <MoreButtonPlain
-                  role="navigation"
-                  aria-label="Video Clip"
+                  role="button"
                   onClick={() => {
                     navigate(`/video/${video.slug}`);
                   }}
                 >
-                  Mehr dazu ...
+                  mehr Infos zum Video
                 </MoreButtonPlain>
               </VideoClip>
             </VideoItem>

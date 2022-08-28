@@ -5,8 +5,8 @@ export default function MoreButton({goToBlog}) {
     goToBlog();
   };
   return (
-    <Button role="navigation" aria-label={goToBlog ? 'Blog Post' : null} onClick={handleClick}>
-      Mehr dazu ...
+    <Button role="button" onClick={handleClick}>
+      Weiter lesen ...
     </Button>
   );
 }

@@ -17,11 +17,12 @@ export function BlogBox({blog}) {
           {blog.lead} {blog.text}
         </Text>
         <MoreButton
+          aria-label="oeffne diesen Blog Post"
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
           }}
         >
-          Mehr dazu ...
+          Weiter lesen ...
         </MoreButton>
       </TextBox>
     </Article>

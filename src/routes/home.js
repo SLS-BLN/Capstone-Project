@@ -23,7 +23,7 @@ export default function Home() {
         <Text>
           {blog.lead} {blog.text.at(0)}
         </Text>
-        <MoreButton goToBlog={goToBlog} />
+        <MoreButton aria-label="oeffne diesen Blog Post" goToBlog={goToBlog} />
       </Teaser>
       <Carousel />
       <Video>
