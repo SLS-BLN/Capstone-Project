@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import {tagColors} from './blog-tag-data';
+import {tagColors} from './BlogTagData';
 import {useNavigate} from 'react-router-dom';
 
 export default function BlogTag({tagName}) {
