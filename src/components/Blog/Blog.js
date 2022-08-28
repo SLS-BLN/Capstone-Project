@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import {blogEntries} from './BlogData';
 import {nanoid} from 'nanoid';
 import {useParams} from 'react-router-dom';
-import BlogTag from '../Blogtag/BlogTag';
+import {BlogTag} from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
 
 export default function Blog() {

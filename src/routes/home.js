@@ -2,7 +2,7 @@ import ReactPlayer from 'react-player/vimeo';
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import {blogEntries} from '../components/Blog/BlogData';
-import BlogTag from '../components/Blogtag/BlogTag';
+import {BlogTag} from '../components/Blogtag/BlogTag';
 import Carousel from '../components/Carousel/Carousel';
 import MoreButton from '../components/Buttons/MoreButton';
 

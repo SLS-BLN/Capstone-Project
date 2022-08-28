@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import {videoEntries} from './VideoData';
 import {useParams} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
-import BlogTag from '../Blogtag/BlogTag';
+import {BlogTag} from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
 
 export default function Video() {

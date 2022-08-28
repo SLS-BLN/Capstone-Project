@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import {tagColors} from './BlogTagData';
 import {useNavigate} from 'react-router-dom';
 
-export default function BlogTag({tagName}) {
+export function BlogTag({tagName}) {
   const navigate = useNavigate();
   const colorVar = tagColors.find(col => col.tag === tagName).color;
 

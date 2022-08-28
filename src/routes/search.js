@@ -3,7 +3,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {blogEntries} from '../components/Blog/BlogData';
 import {videoEntries} from '../components/Video/VideoData';
-import BlogTag from '../components/Blogtag/BlogTag';
+import {BlogTag} from '../components/Blogtag/BlogTag';
 import SearchBar from '../components/Search/SearchBar';
 
 export default function Search() {

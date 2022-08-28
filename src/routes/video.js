@@ -2,7 +2,7 @@ import ReactPlayer from 'react-player/vimeo';
 import styled from 'styled-components/macro';
 import {useNavigate} from 'react-router-dom';
 import {videoEntries} from '../components/Video/VideoData';
-import BlogTag from '../components/Blogtag/BlogTag';
+import {BlogTag} from '../components/Blogtag/BlogTag';
 
 // define width of single video in scrollbar
 const videoItemWidth = '26.75rem';
