@@ -1,4 +1,4 @@
-import BlogTag from './BlogTag';
+import {BlogTag} from './BlogTag';
 
 export default {
   title: 'Button/Tag',

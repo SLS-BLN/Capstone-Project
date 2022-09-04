@@ -1,16 +1,16 @@
-import {Link, Outlet} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import {ReactComponent as Logo} from './icons/logo.svg';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import styled from 'styled-components/macro';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 import Blog from './components/Blog/Blog';
 import Burger from './components/Burger/Burger';
 import Menu from './components/Menu/Menu';
-import SearchByTag from './components/Search/search-by-tag';
+import SearchByTag from './components/Search/SearchTag';
 import Video from './components/Video/Video';
 
-import BlogMain from './routes/blogpage';
+import BlogMain from './routes/blog';
 import Cta from './routes/cta';
 import Home from './routes/home';
 import Error from './routes/error';
@@ -21,46 +21,32 @@ export default function App() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [open]);
-
   return (
     <Wrapper>
       <Header>
         <HomeButton
+          aria-label="navigate to home"
+          role="navigation"
           onClick={() => {
             navigate('/');
           }}
         >
           <Logo />
         </HomeButton>
-        <Burger open={open} setOpen={setOpen} />
+        <Burger aria-label="open navigation menu" role="navigation" open={open} setOpen={setOpen} />
       </Header>
-      <Menu open={open} setOpen={open} />
+      <Menu aria-label="menu" role="navigation" open={open} setOpen={open} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="blog" element={<BlogMain />} />
-        <Route path="blog/:slug" element={<Blog slug={'slug'} />} />
+        <Route path="blog/:slug" element={<Blog />} />
         <Route path="video" element={<VideoMain />} />
-        <Route path="video/:slug" element={<Video slug={'slug'} />} />
+        <Route path="video/:slug" element={<Video />} />
         <Route path="search" element={<Search />} />
         <Route path="search/:tagName" element={<SearchByTag tagName={'tagName'} />} />
         <Route path="*" element={<Error />} />
         <Route path="cta" element={<Cta />} />
       </Routes>
-      <nav>
-        <Link to="/"></Link>
-        <Link to="/blog"></Link>
-        <Link to="/cta"></Link>
-        <Link to="/error"></Link>
-        <Link to="/video"></Link>
-        <Link to="/search"></Link>
-      </nav>
       <Outlet />
     </Wrapper>
   );
@@ -85,6 +71,10 @@ const Header = styled.header`
 const HomeButton = styled.button`
   background-color: transparent;
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   svg {
     margin: 1.5rem 0 1.5rem 3rem;

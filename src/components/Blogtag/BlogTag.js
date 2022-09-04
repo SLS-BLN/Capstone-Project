@@ -1,15 +1,15 @@
 import styled from 'styled-components/macro';
-import {tagColors} from './blog-tag-data';
+import {tagColors} from './BlogTagdata';
 import {useNavigate} from 'react-router-dom';
 
-export default function BlogTag({tagName}) {
+export function BlogTag({tagName}) {
   const navigate = useNavigate();
   const colorVar = tagColors.find(col => col.tag === tagName).color;
 
   return (
     <Button
       style={{backgroundColor: colorVar}}
-      role="navigation"
+      role="button"
       aria-label={`Zeige alle Artikel und Videos zum Thema ${tagName}`}
       onClick={() => {
         navigate(`/search/${tagName}`.toLowerCase());
