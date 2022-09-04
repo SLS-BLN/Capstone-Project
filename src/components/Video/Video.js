@@ -1,9 +1,10 @@
-import styled from 'styled-components/macro';
-import {videoEntries} from './VideoData';
 import {useParams} from 'react-router-dom';
 import ReactPlayer from 'react-player/vimeo';
+import styled from 'styled-components/macro';
+
 import {BlogTag} from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
+import {videoEntries} from './VideoData';
 
 export default function Video() {
   let {slug} = useParams();
@@ -15,7 +16,14 @@ export default function Video() {
         <Container key={video.id}>
           <VideoClip>
             <div style={{'--aspect-ratio': '16 / 9'}}>
-              <ReactPlayer url={video.videoUrl} width="640" height="480" controls={true} playsinline />
+              <ReactPlayer
+                url={video.videoUrl}
+                background="true"
+                width="640"
+                height="480"
+                controls={true}
+                playsinline
+              />
             </div>
           </VideoClip>
           <Description>
@@ -58,10 +66,14 @@ const VideoClip = styled.section`
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;
   }
-  [style*='--aspect-ratio'] > img {
-    height: auto;
-  }
+
   @supports (--custom: property) {
+    [style*='--aspect-ratio'] > :first-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
     [style*='--aspect-ratio'] {
       position: relative;
     }
@@ -69,12 +81,6 @@ const VideoClip = styled.section`
       content: '';
       display: block;
       padding-bottom: calc(100% / (var(--aspect-ratio)));
-    }
-    [style*='--aspect-ratio'] > :first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
     }
   }
 `;

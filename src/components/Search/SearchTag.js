@@ -24,6 +24,8 @@ export default function SearchByTag() {
           <ResultBox key={blog.id}>
             <Button>
               <Subheading
+                role="navigation"
+                aria-label="Zeige den Blog Post an"
                 onClick={() => {
                   navigate(`/blog/${blog.slug}`);
                 }}
@@ -39,6 +41,8 @@ export default function SearchByTag() {
           <ResultBox key={video.id}>
             <Button>
               <Subheading
+                role="navigation"
+                aria-label="Zeige mehr zum Video an"
                 onClick={() => {
                   navigate(`/video/${video.slug}`);
                 }}

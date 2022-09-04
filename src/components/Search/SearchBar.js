@@ -2,19 +2,17 @@ import styled from 'styled-components/macro';
 
 export default function SearchBar({onSearchTermChange}) {
   const handleChange = e => {
-    e.preventDefault();
     onSearchTermChange(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('submit');
-    // onSearchTermChange(e.target.value);
+    e.target[0].value = '';
   };
 
   return (
     <SearchForm type="submit" onSubmit={handleSubmit}>
-      <SearchInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
+      <SearchInput type="search" placeholder="Suche nach ..." onChange={handleChange} />
     </SearchForm>
   );
 }

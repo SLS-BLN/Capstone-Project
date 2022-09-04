@@ -9,7 +9,7 @@ export function BlogTag({tagName}) {
   return (
     <Button
       style={{backgroundColor: colorVar}}
-      role="navigation"
+      role="button"
       aria-label={`Zeige alle Artikel und Videos zum Thema ${tagName}`}
       onClick={() => {
         navigate(`/search/${tagName}`.toLowerCase());
