@@ -5,14 +5,14 @@ import {useParams} from 'react-router-dom';
 import {BlogTag} from '../Blogtag/BlogTag';
 import BackButton from '../Buttons/BackButton';
 
-export default function Blog() {
+export default function Blog({style, storybook_slug}) {
   const {slug} = useParams();
-  const blogPost = blogEntries.filter(item => item.slug === slug);
+  const blogPost = blogEntries.filter(item => item.slug === slug || storybook_slug);
 
   return (
     <>
       {blogPost.map(blog => (
-        <Article key={blog.id}>
+        <Article key={blog.id} style={style}>
           <BlogImage src={blog.imgUrl} alt={blog.imgAlt} width={355} height={200} />
           <BackButton />
           <BlogTag tagName={blog.tag} />

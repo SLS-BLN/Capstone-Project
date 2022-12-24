@@ -2,13 +2,12 @@ import Blog from './Blog';
 
 export default {
   title: 'Page/Blog post',
-  component: Blog,
   parameters: {
     layout: 'fullscreen',
   },
 };
 
-const Template = args => <Blog style={{...args}} />;
+const Template = args => <Blog storybook_slug="warum-ton-wichtig-ist" style={{...args}} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -16,12 +15,12 @@ Default.args = {
   color: 'var(--font-color)',
 };
 
-export const Red = Template.bind({});
-Red.args = {
-  color: 'red',
+export const Green = Template.bind({});
+Green.args = {
+  color: 'limegreen',
 };
 
-export const Blue = Template.bind({});
-Blue.args = {
-  color: 'var(--color-primary-light)',
+export const Yellow = Template.bind({});
+Yellow.args = {
+  color: 'yellow',
 };
