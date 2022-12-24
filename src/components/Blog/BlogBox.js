@@ -6,29 +6,30 @@ export function BlogBox({blog}) {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      <div className="box__image">
+    <Article>
+      <ImageBox>
         <BlogTagLine tagName={blog.tag} />
-        <img width={280} height={158} src={blog.imgUrlSquare} alt={blog.imgAlt} />
-      </div>
-      <div className="box__text">
-        <h2>{blog.titleShort}</h2>
-        <Paragraph>
+        <BlogImage width={560} height={316} src={blog.imgUrlSquare} alt={blog.imgAlt} />
+      </ImageBox>
+      <TextBox>
+        <Subheading>{blog.titleShort}</Subheading>
+        <Text>
           {blog.lead} {blog.text}
-        </Paragraph>
+        </Text>
         <MoreButton
+          aria-label="oeffne diesen Blog Post"
           onClick={() => {
             navigate(`/blog/${blog.slug}`);
           }}
         >
-          Mehr dazu ...
+          Weiter lesen ...
         </MoreButton>
-      </div>
-    </Box>
+      </TextBox>
+    </Article>
   );
 }
 
-const Box = styled.article`
+const Article = styled.article`
   display: flex;
   justify-content: center;
   background-color: var(--color-grey-dark-1);
@@ -36,48 +37,42 @@ const Box = styled.article`
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 2rem;
-
-  .box__image {
-    width: 50%;
-    height: 100%;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 16/9;
-  }
-
-  .box__text {
-    width: 50%;
-    padding: 0 1rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0.5rem 0;
-  }
 `;
 
-const Paragraph = styled.p`
+const ImageBox = styled.div`
+  width: 50%;
+`;
+const BlogImage = styled.img`
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+`;
+
+const TextBox = styled.div`
+  width: 50%;
+  padding: 0 1rem;
+`;
+
+const Subheading = styled.h2`
   font-size: 1.2rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem 0;
+`;
+
+const Text = styled.div`
+  font-size: 1.4rem;
   line-height: 1.2;
   display: -webkit-box; /* stylelint-disable-line value-no-vendor-prefix  */
-  -webkit-line-clamp: var(--line-clamp, 5); /* stylelint-disable-line property-no-vendor-prefix */
+  -webkit-line-clamp: 4; /* stylelint-disable-line property-no-vendor-prefix */
   -webkit-box-orient: vertical; /* stylelint-disable-line property-no-vendor-prefix */
-  word-break: var(--word-break, 'none');
   overflow: hidden;
   hyphens: auto;
-  text-align: var(--align, left);
-
-  --is-single-line: 1 - clamp(0, calc(var(--line-clamp) - 1), var(--line-clamp));
-  --delay: calc(-1s * (var(--is-single-line, 1) - 1));
-
-  animation: states 1s var(--delay) paused;
+  text-align: left;
   margin-bottom: 1rem;
 `;
 
@@ -90,6 +85,7 @@ const MoreButton = styled.button`
   padding: 0.25rem 0.5rem;
   margin-bottom: 0.01rem;
   border-radius: var(--radius);
+
   &:hover {
     background-color: var(--color-primary-dark);
     cursor: pointer;

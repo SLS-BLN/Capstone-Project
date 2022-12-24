@@ -1,13 +1,17 @@
-import styled from 'styled-components';
-import {useNavigate} from 'react-router-dom';
+import styled from 'styled-components/macro';
 
-export default function BackButton() {
-  const navigate = useNavigate();
-  return <Button onClick={() => navigate(-1)}>Zurück</Button>;
+export default function MoreButton({goToBlog}) {
+  const handleClick = () => {
+    goToBlog();
+  };
+  return (
+    <Button role="button" onClick={handleClick}>
+      Weiter lesen ...
+    </Button>
+  );
 }
 
 const Button = styled.button`
-  display: block;
   color: var(--font-color);
   background-color: var(--color-primary);
   font-size: 1.4rem;
@@ -15,7 +19,6 @@ const Button = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
-  margin-bottom: 1rem;
 
   &:hover {
     background-color: var(--color-primary-dark);

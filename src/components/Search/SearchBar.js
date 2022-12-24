@@ -2,30 +2,28 @@ import styled from 'styled-components/macro';
 
 export default function SearchBar({onSearchTermChange}) {
   const handleChange = e => {
-    e.preventDefault();
     onSearchTermChange(e.target.value);
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('submit');
-    // onSearchTermChange(e.target.value);
+    e.target[0].value = '';
   };
 
   return (
-    <SearchBarContainer type="submit" onSubmit={handleSubmit}>
-      <SearchBarInput type="search" id="search" placeholder="Suche nach ..." onChange={handleChange} />
-    </SearchBarContainer>
+    <SearchForm type="submit" onSubmit={handleSubmit}>
+      <SearchInput type="search" placeholder="Suche nach ..." onChange={handleChange} />
+    </SearchForm>
   );
 }
 
-const SearchBarContainer = styled.form`
+const SearchForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 3.5rem;
 `;
-const SearchBarInput = styled.input`
+const SearchInput = styled.input`
   font-size: 1.6rem;
   font-weight: 200;
   padding: 1rem 3.5rem;
