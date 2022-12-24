@@ -1,6 +1,5 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-styled-components", "stylelint-config-prettier"],
-  "plugins": ["stylelint-a11y"],
   "processors": ["stylelint-processor-styled-components"],
   "rules": {
     "selector-type-case": [
