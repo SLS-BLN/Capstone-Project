@@ -28,6 +28,7 @@ const Button = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   margin-bottom: 1rem;
+
   &:hover {
     color: var(--color-grey-light-1);
     cursor: pointer;

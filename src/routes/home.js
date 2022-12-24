@@ -73,6 +73,7 @@ const Container = styled.div`
     display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
+
   & > :first-child {
     width: 100%;
     position: absolute;

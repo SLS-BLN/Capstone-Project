@@ -153,6 +153,7 @@ const MoreButtonPlain = styled.button`
   border: none;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
+
   &:hover {
     background-color: var(--color-black);
     cursor: pointer;
@@ -165,18 +166,22 @@ const VideoClip = styled.section`
   [style*='--aspect-ratio'] > :first-child {
     width: 100%;
   }
+
   [style*='--aspect-ratio'] > img {
     height: auto;
   }
+
   @supports (--custom: property) {
     [style*='--aspect-ratio'] {
       position: relative;
     }
+
     [style*='--aspect-ratio']::before {
       content: '';
       display: block;
       padding-bottom: calc(100% / (var(--aspect-ratio)));
     }
+
     [style*='--aspect-ratio'] > :first-child {
       position: absolute;
       top: 0;

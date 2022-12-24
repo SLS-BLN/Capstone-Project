@@ -16,6 +16,7 @@ const Button = styled.button`
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   margin-bottom: 1rem;
+
   &:hover {
     background-color: var(--color-primary-dark);
     cursor: pointer;

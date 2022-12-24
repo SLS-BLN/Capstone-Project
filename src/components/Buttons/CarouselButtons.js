@@ -33,6 +33,7 @@ const Button = styled.button`
   &.btn-left {
     padding-left: 0.5rem;
   }
+
   &.btn-right {
     padding-right: 0.5rem;
   }

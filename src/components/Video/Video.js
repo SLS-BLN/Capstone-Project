@@ -74,9 +74,11 @@ const VideoClip = styled.section`
       left: 0;
       height: 100%;
     }
+
     [style*='--aspect-ratio'] {
       position: relative;
     }
+
     [style*='--aspect-ratio']::before {
       content: '';
       display: block;

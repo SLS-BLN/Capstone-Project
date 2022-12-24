@@ -17,7 +17,7 @@ export default styled.createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
     font-weight: 400;
     line-height: 1.4;
     color: var(--font-color);
